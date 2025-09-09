@@ -145,6 +145,18 @@ ul {
   width: 100%;
 }
 
+/* 顶部导航：轻底边指示条（手机端优先） */
+.nav { gap: 1.25rem; }
+.nav a { position: relative; padding: 0.4rem 0.1rem; }
+.nav a::after { content: ""; position: absolute; left: 20%; right: 20%; bottom: -0.2rem; height: 2px; background: transparent; border-radius: 2px; transition: background 0.2s ease, transform 0.2s ease; transform: scaleX(0.9); }
+@media (max-width: 480px) {
+  .nav { gap: 1rem; }
+  .nav a { padding: 0.55rem 0.1rem; }
+  .nav a::after { height: 2px; bottom: -0.25rem; }
+  /* 移动端显式使用轻底边指示条 */
+  .nav a:hover::after, .nav a.active::after { background: rgba(0,123,255,0.7); }
+}
+
 /* --- 英雄区 --- */
 .hero {
   display: flex;
@@ -160,19 +172,55 @@ ul {
   overflow: hidden; /* 防止动画元素溢出 */
 }
 
-.hero .avatar {
-  width: 150px;
-  height: 150px;
-  /* 修改：从圆形变为圆角方形 */
-  border-radius: 16px;
-  object-fit: cover;
-  margin-bottom: 1.5rem;
-  /* 调整：更柔和的边框和阴影 */
-  border: 3px solid rgba(255, 255, 255, 0.8);
-  box-shadow: 0 8px 30px rgba(0, 30, 80, 0.12);
-  /* 新增：入场动画 */
-  animation: scaleIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+/* 顶部与首屏留白、标题与图片层次 */
+.site-header { padding: 1rem 0.2rem; }
+.hero { padding-top: 96px; }
+.hero h1 { margin-top: 1.15rem; font-size: 2rem; }
+.hero .subtitle { margin-top: 0.25rem; font-size: 1.06rem; color: var(--color-subtle); }
+@media (max-width: 480px) {
+  .hero { padding-top: 104px; }
+  .hero h1 { margin-top: 1.25rem; font-size: 1.9rem; }
+  .hero .subtitle { font-size: 1rem; margin-bottom: 0.8rem; }
 }
+
+/* Hero 结构细化与手机端左对齐 */
+.hero { text-align: left; }
+.hero .hero-content { width: 100%; max-width: 960px; padding: 0 1rem; margin: 0 auto; }
+.hero h1 { margin-top: 0.8rem; }
+@media (max-width: 480px) {
+  .hero h1 { margin-top: 1rem; font-size: 1.8rem; }
+  .hero .subtitle { margin-bottom: 1rem; font-size: 1.05rem; }
+  .hero-cta { gap: 0.5rem; }
+  .hero-cta .btn { padding: 0.42rem 0.75rem; font-size: 0.86rem; border-radius: 10px; }
+}
+
+/* 头像展示优化：更好的可视裁切 */
+.hero .avatar {
+  width: min(96vw, 480px);
+  height: auto;
+  object-fit: contain; /* 尽可能不裁切，完整展示 */
+  object-position: center 45%;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none; /* 无框、无阴影的嵌入式风格 */
+  background: transparent;
+  /* 渐变遮罩更柔和，羽化更宽，营造无缝融入感（焦点略上移） */
+  -webkit-mask-image: radial-gradient(150% 145% at 50% 40%, #000 52%, rgba(0,0,0,0) 92%);
+          mask-image: radial-gradient(150% 145% at 50% 40%, #000 52%, rgba(0,0,0,0) 92%);
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%; mask-size: 100% 100%;
+}
+
+@media (min-width: 769px) {
+  .hero .avatar {
+    width: min(38vw, 500px);
+    -webkit-mask-image: radial-gradient(145% 135% at 50% 42%, #000 54%, rgba(0,0,0,0) 92%);
+            mask-image: radial-gradient(145% 135% at 50% 42%, #000 54%, rgba(0,0,0,0) 92%);
+  }
+}
+
+/* 如需无边框嵌入式风格，可切换为： */
+/* .hero .avatar { border-radius: 0; box-shadow: none; } */
 
 .hero h1,
 .hero .subtitle,
@@ -310,6 +358,38 @@ section:nth-of-type(odd) {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
+/* 竖向 Banner 样式（Skills 区重构） */
+.banners { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+.banner {
+  background: linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.06);
+}
+.banner h3 { margin-bottom: 0.25rem; font-size: 1.1rem; }
+.banner p { color: var(--color-subtle); font-size: 0.95rem; }
+.banner h3 { display: flex; align-items: center; gap: 0.45rem; }
+.banner h3 .i { width: 18px; height: 18px; color: var(--color-primary); display: inline-flex; align-items: center; justify-content: center; }
+.banner + .banner { margin-top: 0; }
+@media (min-width: 769px) {
+  .banners { gap: 1.25rem; }
+  .banner { padding: 1.25rem; }
+}
+
+/* Banner 内文与经历列表的可读性优化 */
+.banners .banner p { line-height: 1.85; text-wrap: balance; }
+.experience-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.55rem; }
+.experience-list li { position: relative; padding-left: 1.05rem; line-height: 1.9; text-wrap: balance; }
+.experience-list li::before { content: ""; position: absolute; left: 0.2rem; top: 0.85em; width: 6px; height: 6px; border-radius: 50%; background: var(--color-primary); box-shadow: 0 0 0 3px rgba(0,123,255,0.10); }
+/* 用于防止“单个字”独占一行 */
+.nowrap { white-space: nowrap; }
+
+/* 通用要点列表样式 */
+.bullet-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+.bullet-list li { position: relative; padding-left: 1rem; line-height: 1.85; text-wrap: balance; }
+.bullet-list li::before { content: ""; position: absolute; left: 0.2rem; top: 0.8em; width: 6px; height: 6px; border-radius: 50%; background: var(--color-primary); box-shadow: 0 0 0 3px rgba(0,123,255,0.10); }
+
 /* --- 联系方式 --- */
 .contact .container {
   max-width: 600px;
@@ -336,18 +416,98 @@ section:nth-of-type(odd) {
   margin-left: 0.5rem;
 }
 
+/* 联系方式对齐布局（固定三列，单行左对齐，更紧凑） */
+.contact-list { text-align: left; }
+.contact-list li { display: grid; grid-template-columns: 4rem auto 1.2rem; align-items: center; column-gap: 0; }
+.contact-list .label { color: var(--color-text); white-space: nowrap; }
+.contact-list .value { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.contact-list .value a { color: var(--color-text); display: inline-block; max-width: 100%; vertical-align: middle; }
+.copy-btn { width: 1.2rem; height: 1.2rem; padding: 0; display: inline-flex; align-items: center; justify-content: center; }
+/* 覆盖通用按钮的左外边距，让按钮紧贴文本 */
+.contact-list .copy-btn { margin-left: 1.4ch; width: 1.1rem; height: 1.1rem; }
+.contact-list .copy-btn .icon { width: 14px; height: 14px; }
+/* 复制按钮：浅色圆润方块（浅底、细边、悬停微加深） */
+.copy-btn {
+  margin-left: 0.5rem;
+  padding: 0.32rem 0.56rem;
+  border-radius: 8px;
+  border: 1px solid #E6E8EF;
+  background: #F7F8FB;
+  color: var(--color-primary);
+  display: inline-flex; align-items: center; justify-content: center;
+  transition: background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+}
+.copy-btn:hover { background: #EEF2F7; border-color: #D9DBE1; box-shadow: 0 2px 6px rgba(0,0,0,0.06); }
+.copy-btn:active { background: #E7EBF2; }
+.copy-btn .icon { display:block; }
+
+/* 联系方式定位与距离（恢复为绝对 right 偏移） */
+.contact-list li { position: relative; }
+.contact-list .value { position: relative; padding-right: 1.8rem; }
+.contact-list .copy-btn { position: absolute; right: 12.35ch; top: 50%; transform: translateY(-50%); }
+.contact-list li:nth-child(2) .copy-btn { right: 12.55ch; }
+.contact-list li:not(:nth-child(2)) .copy-btn { right: 12.35ch; }
+@media (max-width: 480px) {
+  .contact-list .value { padding-right: 1.6rem; }
+  .contact-list .copy-btn { right: 11.05ch; }
+  .contact-list li:nth-child(2) .copy-btn { right: 11.2ch; }
+  .contact-list li:not(:nth-child(2)) .copy-btn { right: 11.05ch; }
+}
+
 /* 移除：删除二维码相关样式 */
 
 /* --- 站点页脚 --- */
+/* 页脚：极简细线+浅色文本，替换厚重色块 */
 .site-footer {
   text-align: center;
-  padding: 2rem 0;
-  background-color: #222;
-  color: #aaa;
+  padding: 1rem 0; /* 更轻的高度 */
+  background: transparent; /* 去掉深色色块 */
+  border-top: 1px solid #ECEFF4; /* 细分隔线 */
+  color: #7a7f87; /* 更柔和的文字颜色 */
 }
-.site-footer p {
+.site-footer p { font-size: 0.88rem; margin: 0; }
+
+/* 复制按钮：深色实心图标，提升可点性 */
+.copy-btn { color: #333; border-color: #e2e2e2; }
+.copy-btn:hover { background: #f1f2f4; }
+.copy-btn .icon { fill: currentColor; }
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  padding: 10px 16px;
+  background: rgba(0,0,0,0.75);
+  color: #fff;
+  border-radius: 8px;
   font-size: 0.9rem;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(-2px); }
+
+/* 二维码卡片（裁切显示整码） */
+.qrcode-card { 
+  margin-top: 1.5rem; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  gap: 0.5rem; 
+}
+.qrcode-img {
+  width: 100%;
+  max-width: 680px; /* 桌面上限更大 */
+  aspect-ratio: 1 / 1;
+  object-fit: contain; /* 确保不变形，完整显示二维码 */
+  image-rendering: pixelated; /* 保持二维码清晰 */
+  border-radius: 0;
+  border: 0;
+  background: transparent;
+  padding: 0; /* 去掉白边，仅放大二维码本体 */
+}
+.qrcode-card small { color: var(--color-subtle); }
 
 /* --- 响应式设计 --- */
 @media (max-width: 768px) {
@@ -383,4 +543,11 @@ section:nth-of-type(odd) {
     padding: 1rem 0.5rem;
   }
   /* 移除：删除针对二维码的响应式调整 */
+  /* 调整英雄区按钮在移动端的尺寸与间距 */
+  .hero-cta { gap: 0.6rem; }
+  .hero-cta .btn { padding: 0.48rem 0.85rem; font-size: 0.9rem; }
+  /* 头像全宽贴边，不裁切 */
+  .hero .avatar { width: 100vw; max-width: none; margin-left: calc(50% - 50vw); }
+  /* 新增：收紧联系方式容器左右留白，让二维码更靠近满宽 */
+  .contact .container { padding-left: 0.5rem; padding-right: 0.5rem; }
 }

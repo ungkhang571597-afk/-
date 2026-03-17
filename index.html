@@ -3,9 +3,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>钟滔 | 个人主页</title>
-    <meta name="description" content="钟滔的个人主页，关于个人经历、新媒体运营、内容获客与联系方式。" />
-    <meta name="theme-color" content="#173b36" />
+    <title>钟滔 | 新媒体运营与内容获客</title>
+    <meta name="description" content="钟滔的个人主页，聚焦新媒体运营、内容获客、案例结果与联系方式。" />
+    <meta name="theme-color" content="#16211f" />
+    <meta property="og:title" content="钟滔 | 新媒体运营与内容获客" />
+    <meta property="og:description" content="做过小红书 SEO、抖音内容和信息流，也做过 B 端销售和服役。这里放的是我的经历、案例和现在在做的事情。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.xn--8bx391f.com/" />
+    <meta property="og:image" content="https://www.xn--8bx391f.com/%E6%88%91%E7%9A%84%E5%9B%BE%E7%89%87.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://www.xn--8bx391f.com/" />
+    <link rel="preload" as="image" href="我的图片.jpg" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -15,13 +23,14 @@
           <span class="brand-mark">ZT</span>
           <span class="brand-copy">
             <strong>钟滔</strong>
-            <small>个人主页</small>
+            <small>New Media</small>
           </span>
         </a>
 
         <nav class="nav" aria-label="主导航">
-          <a href="#home">首页</a>
-          <a href="#skills">介绍</a>
+          <a href="#cases">案例</a>
+          <a href="#services">能力</a>
+          <a href="#about">关于</a>
           <a href="#contact">联系</a>
         </nav>
       </div>
@@ -29,83 +38,228 @@
 
     <main id="main-content">
       <section class="hero" id="home" aria-label="首屏介绍">
-        <div class="hero-orb hero-orb-a" aria-hidden="true"></div>
-        <div class="hero-orb hero-orb-b" aria-hidden="true"></div>
+        <div class="hero-glow hero-glow-a" aria-hidden="true"></div>
+        <div class="hero-glow hero-glow-b" aria-hidden="true"></div>
 
         <div class="container hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow">PERSONAL PAGE</p>
-            <h1>钟滔</h1>
-            <p class="subtitle">I deserve the best and open my heart to receive it.</p>
+            <p class="eyebrow">NEW MEDIA / CONTENT / GROWTH</p>
+            <h1>新媒体这件事，我更关心它能不能带来结果。</h1>
+            <p class="subtitle">我叫钟滔，目前主要是在新媒体这个领域。</p>
             <p class="hero-summary">
-              我目前主要是在新媒体这个领域，接触过小红书 SEO、抖音内容和信息流，也做过 B 端销售和服役。现在想把内容、获客和转化这些事情一点点做好。
+              做过小红书 SEO、抖音内容和信息流，也做过 B 端销售和服役。现在想把内容、获客和转化这些事情一点点做好。
             </p>
 
-            <div class="hero-meta" aria-label="补充信息">
-              <span>杭州 / 赣州</span>
-              <span>微信同号</span>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#cases">看代表案例</a>
+              <a class="btn btn-secondary" href="#contact">直接联系我</a>
             </div>
 
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="#skills">看我的经历</a>
-              <a class="btn btn-secondary" href="#contact">联系我</a>
-            </div>
+            <ul class="hero-notes" aria-label="补充信息">
+              <li>杭州 / 赣州</li>
+              <li>微信同号</li>
+              <li>可聊账号、内容、获客</li>
+            </ul>
           </div>
 
           <div class="hero-visual">
-            <div class="portrait-shell">
-              <img class="avatar" src="我的图片.jpg" alt="钟滔的照片" />
+            <div class="portrait-card">
+              <img class="avatar" src="我的图片.jpg" alt="钟滔的照片" loading="eager" fetchpriority="high" />
+
+              <div class="floating-proof floating-proof-a">
+                <strong>2700+</strong>
+                <span>累计获客</span>
+              </div>
+
+              <div class="floating-proof floating-proof-b">
+                <strong>216 万</strong>
+                <span>12 个月 GMV</span>
+              </div>
+
+              <div class="floating-proof floating-proof-c">
+                <strong>20%</strong>
+                <span>自然流转化</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="skills" id="skills" aria-label="自我介绍">
+      <section class="proof-strip" aria-label="关键数据">
+        <div class="container">
+          <div class="proof-grid">
+            <article class="proof-card">
+              <span class="proof-value">2700+</span>
+              <span class="proof-label">同城商家累计获客</span>
+            </article>
+
+            <article class="proof-card">
+              <span class="proof-value">216 万</span>
+              <span class="proof-label">12 个月 GMV</span>
+            </article>
+
+            <article class="proof-card">
+              <span class="proof-value">1200+</span>
+              <span class="proof-label">IP 方向累计获客</span>
+            </article>
+
+            <article class="proof-card">
+              <span class="proof-value">20%</span>
+              <span class="proof-label">自然流转化率</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="cases" id="cases" aria-label="代表案例">
         <div class="container">
           <div class="section-heading">
-            <p class="section-kicker">ABOUT</p>
-            <h2>自我介绍</h2>
-            <p class="section-intro">这里放的是我的一些经历，还有我现在在做的事情，简单一点，也方便你了解我。</p>
+            <p class="section-kicker">SELECTED WORK</p>
+            <h2>代表案例</h2>
+            <p class="section-intro">比起讲很多空话，我更愿意把做过的项目和结果直接放出来。</p>
           </div>
 
-          <div class="banners">
-            <article class="banner banner-featured">
-              <h3>个人经历</h3>
-              <ul class="experience-list">
-                <li>学生时期摆过摊，一上午赚了三百，第一次觉得自己也能靠自己赚钱。</li>
-                <li>19 岁离开工厂，带着五百块第一次出省，坐绿皮车去了更远的地方。</li>
-                <li>做过 B 端销售，两个月拿到过小销冠。</li>
-                <li>后来也参军服役了两年。</li>
-                <li>现在主要在新媒体这条路上继续往前走。</li>
+          <div class="case-grid">
+            <article class="case-card case-card-featured">
+              <div class="case-head">
+                <span class="case-index">CASE 01</span>
+                <h3>杭州言心口才</h3>
+              </div>
+
+              <p class="case-summary">
+                参与从 0 到 1 搭建新媒体获客渠道，把小红书 SEO、抖音自然流和信息流结合起来，让内容、线索和转化真正接上。
+              </p>
+
+              <ul class="case-tags" aria-label="案例标签">
+                <li>教育机构</li>
+                <li>同城获客</li>
+                <li>小红书 + 抖音</li>
               </ul>
+
+              <div class="case-metrics">
+                <div>
+                  <strong>800+</strong>
+                  <span>小红书自然流线索</span>
+                </div>
+                <div>
+                  <strong>2100+</strong>
+                  <span>抖音累计获客</span>
+                </div>
+                <div>
+                  <strong>20%</strong>
+                  <span>自然流转化率</span>
+                </div>
+              </div>
+
+              <p class="case-foot">
+                面对连锁品牌竞对，靠自然流 SEO 做到了核心搜索结果前列，也把线索承接和转化效率一起拉了起来。
+              </p>
             </article>
 
-            <article class="banner">
-              <h3>内容与获客</h3>
-              <ul class="bullet-list">
-                <li>做过小红书 SEO、抖音自然流和信息流，也接触过从 0 到 1 搭账号。</li>
-                <li>做过教育和知识付费方向的账号，也参与过 IP 内容和同城获客。</li>
-                <li>从账号定位、选题脚本到内容发布和复盘，基本都能自己推进。</li>
+            <article class="case-card">
+              <div class="case-head">
+                <span class="case-index">CASE 02</span>
+                <h3>梦璃美业 IP</h3>
+              </div>
+
+              <p class="case-summary">
+                参与知识付费 IP 方向的内容运营，围绕选题、内容表达和数据反馈持续优化，让账号不只是发内容，而是能稳定地产生结果。
+              </p>
+
+              <ul class="case-tags" aria-label="案例标签">
+                <li>知识付费</li>
+                <li>IP 内容</li>
+                <li>小红书方向</li>
               </ul>
+
+              <div class="case-metrics">
+                <div>
+                  <strong>1200+</strong>
+                  <span>累计获客</span>
+                </div>
+                <div>
+                  <strong>120 万</strong>
+                  <span>6 个月 GMV</span>
+                </div>
+                <div>
+                  <strong>30%</strong>
+                  <span>完播率提升</span>
+                </div>
+              </div>
+
+              <p class="case-foot">
+                这类项目让我更清楚一件事：内容不是只看表达，最后还是要落到用户反馈、线索质量和转化结果上。
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="services" id="services" aria-label="核心能力">
+        <div class="container">
+          <div class="section-heading">
+            <p class="section-kicker">WHAT I DO</p>
+            <h2>我现在更擅长的几件事</h2>
+            <p class="section-intro">不是每件事都做，但会把真正重要的几件事做扎实。</p>
+          </div>
+
+          <div class="service-grid">
+            <article class="service-card">
+              <h3>账号定位</h3>
+              <p>从人群、内容到成交链路，把方向先想清楚，再开始做账号。</p>
             </article>
 
-            <article class="banner">
-              <h3>做事方式</h3>
-              <ul class="bullet-list">
-                <li>做事会先看需求和转化，再去想内容怎么做。</li>
-                <li>会根据数据和反馈不断调整，也愿意反复试、反复复盘。</li>
-                <li>对新工具和 AI 有兴趣，但前提还是得真的有用。</li>
-              </ul>
+            <article class="service-card">
+              <h3>内容策略</h3>
+              <p>做选题、脚本和发布节奏，不是只看好不好看，而是看有没有用。</p>
             </article>
 
-            <article class="banner">
-              <h3>个人兴趣</h3>
-              <ul class="bullet-list">
-                <li>喜欢自然风光和户外活动，能让我把节奏放慢一点。</li>
-                <li>平时也会关注内容表达、账号运营这些东西。</li>
-                <li>也会看一些和自己成长有关的话题。</li>
-              </ul>
+            <article class="service-card">
+              <h3>获客闭环</h3>
+              <p>把小红书 SEO、抖音自然流和信息流接到结果上，不让内容停在表面。</p>
             </article>
+
+            <article class="service-card">
+              <h3>复盘优化</h3>
+              <p>看数据、找问题、调方向，也会从销售和承接的角度看后面的转化。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="about" id="about" aria-label="关于我">
+        <div class="container about-grid">
+          <div class="about-copy">
+            <p class="section-kicker">ABOUT ME</p>
+            <h2>我的路不是一开始就很直。</h2>
+            <p>
+              学生时期摆过摊，19 岁离开工厂，后来做过 B 端销售，也服役过两年。可能因为这些经历，我现在做新媒体时，会比单纯做内容更在意一件事: 它到底能不能落地。
+            </p>
+            <p>
+              我不太喜欢把自己说得太满，更想把事情一件件做好。内容也好，获客也好，转化也好，最后还是要回到真实结果上。
+            </p>
+          </div>
+
+          <div class="journey-card">
+            <h3>几个对我影响比较大的节点</h3>
+            <ol class="journey-list">
+              <li>
+                <span class="journey-year">学生时期</span>
+                <p>摆摊赚钱，第一次觉得自己可以靠自己往前走。</p>
+              </li>
+              <li>
+                <span class="journey-year">19 岁</span>
+                <p>带着五百块第一次出省，开始真正接触更大的世界。</p>
+              </li>
+              <li>
+                <span class="journey-year">之后</span>
+                <p>做过 B 端销售，也服役过两年，对执行和结果会更敏感。</p>
+              </li>
+              <li>
+                <span class="journey-year">现在</span>
+                <p>主要在新媒体这个领域继续往前走，把内容、获客和转化慢慢做明白。</p>
+              </li>
+            </ol>
           </div>
         </div>
       </section>
@@ -114,8 +268,8 @@
         <div class="container">
           <div class="section-heading section-heading-left">
             <p class="section-kicker">CONTACT</p>
-            <h2>联系我</h2>
-            <p class="section-intro">想进一步沟通，可以直接发邮件、打电话，或者扫码添加微信。</p>
+            <h2>如果你想找我聊</h2>
+            <p class="section-intro">不管是想聊账号、内容、获客，还是单纯认识一下，都可以直接联系我。</p>
           </div>
 
           <div class="contact-layout">
@@ -155,6 +309,10 @@
                   <span class="value">杭州 / 赣州</span>
                 </li>
               </ul>
+
+              <div class="contact-note">
+                <p>平时微信看得更多。如果你有具体想聊的方向，也可以直接带着问题来。</p>
+              </div>
             </div>
 
             <div class="qrcode-card">
@@ -169,8 +327,9 @@
     </main>
 
     <footer class="site-footer" aria-label="页脚">
-      <div class="container">
+      <div class="container footer-inner">
         <p>&copy; <span id="year">2026</span> 钟滔</p>
+        <span>内容、获客、转化</span>
       </div>
     </footer>
 

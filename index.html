@@ -328,7 +328,7 @@
 
     <footer class="site-footer" aria-label="页脚">
       <div class="container footer-inner">
-        <p>&copy; <span id="year">2026</span> 钟滔</p>
+        <p>&copy; <span id="year">2024</span> 钟滔</p>
         <span>内容、获客、转化</span>
       </div>
     </footer>
@@ -347,13 +347,8 @@
           .filter(Boolean);
         var backToTop = document.getElementById("back-to-top");
         var toast = document.getElementById("toast");
-        var year = document.getElementById("year");
         var lastScrollY = window.scrollY || 0;
         var ticking = false;
-
-        if (year) {
-          year.textContent = String(new Date().getFullYear());
-        }
 
         function updateHeaderState() {
           if (!header) {

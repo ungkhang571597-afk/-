@@ -43,22 +43,22 @@
 
         <div class="container hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow">NEW MEDIA / CONTENT / GROWTH</p>
-            <h1>新媒体这件事，我更关心它能不能带来结果。</h1>
+            <p class="eyebrow">ZHONG TAO / PERSONAL SITE</p>
+            <h1 class="hero-title">钟滔</h1>
             <p class="subtitle">我叫钟滔，目前主要是在新媒体这个领域。</p>
             <p class="hero-summary">
-              做过小红书 SEO、抖音内容和信息流，也做过 B 端销售和服役。现在想把内容、获客和转化这些事情一点点做好。
+              这里放的是我做过的一些项目、结果，还有我现在在做的事情。想了解我，往下看就行。
             </p>
 
             <div class="hero-actions">
-              <a class="btn btn-primary" href="#cases">看代表案例</a>
-              <a class="btn btn-secondary" href="#contact">直接联系我</a>
+              <a class="btn btn-primary" href="#cases">看案例</a>
+              <a class="btn btn-secondary" href="#contact">联系我</a>
             </div>
 
             <ul class="hero-notes" aria-label="补充信息">
               <li>杭州 / 赣州</li>
               <li>微信同号</li>
-              <li>可聊账号、内容、获客</li>
+              <li>案例和联系方式都在下面</li>
             </ul>
           </div>
 
@@ -334,14 +334,92 @@
     </footer>
 
     <div id="toast" class="toast" aria-live="polite" aria-atomic="true" role="status"></div>
+    <button id="back-to-top" class="back-to-top" type="button" aria-label="回到顶部">回到顶部</button>
 
     <script>
       (function () {
+        var header = document.querySelector(".site-header");
+        var navLinks = Array.prototype.slice.call(document.querySelectorAll(".nav a[href^='#']"));
+        var sections = navLinks
+          .map(function (link) {
+            return document.querySelector(link.getAttribute("href"));
+          })
+          .filter(Boolean);
+        var backToTop = document.getElementById("back-to-top");
         var toast = document.getElementById("toast");
         var year = document.getElementById("year");
+        var lastScrollY = window.scrollY || 0;
+        var ticking = false;
 
         if (year) {
           year.textContent = String(new Date().getFullYear());
+        }
+
+        function updateHeaderState() {
+          if (!header) {
+            return;
+          }
+
+          var currentY = window.scrollY || window.pageYOffset || 0;
+          var isTop = currentY < 36;
+
+          header.classList.toggle("is-top", isTop);
+          header.classList.toggle("is-scrolled", !isTop);
+
+          if (isTop) {
+            header.classList.remove("is-hidden");
+          } else if (currentY > lastScrollY + 12) {
+            header.classList.add("is-hidden");
+          } else if (currentY < lastScrollY - 12) {
+            header.classList.remove("is-hidden");
+          }
+
+          if (backToTop) {
+            backToTop.classList.toggle("show", currentY > 560);
+          }
+
+          lastScrollY = currentY;
+        }
+
+        function updateActiveNav() {
+          if (!navLinks.length || !sections.length) {
+            return;
+          }
+
+          var offset = (header ? header.offsetHeight : 0) + 120;
+          var currentId = "";
+
+          sections.forEach(function (section) {
+            if (window.scrollY + offset >= section.offsetTop) {
+              currentId = section.id;
+            }
+          });
+
+          navLinks.forEach(function (link) {
+            var isActive = currentId && link.getAttribute("href") === "#" + currentId;
+            link.classList.toggle("is-active", !!isActive);
+
+            if (isActive) {
+              link.setAttribute("aria-current", "location");
+            } else {
+              link.removeAttribute("aria-current");
+            }
+          });
+        }
+
+        function syncScrollUi() {
+          updateHeaderState();
+          updateActiveNav();
+          ticking = false;
+        }
+
+        function onScroll() {
+          if (ticking) {
+            return;
+          }
+
+          ticking = true;
+          window.requestAnimationFrame(syncScrollUi);
         }
 
         function showToast(text) {
@@ -428,6 +506,13 @@
         }
 
         document.addEventListener("click", function (event) {
+          var backButton = event.target.closest("#back-to-top");
+          if (backButton) {
+            event.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            return;
+          }
+
           var button = event.target.closest(".copy-btn");
           if (!button) {
             return;
@@ -436,6 +521,10 @@
           event.preventDefault();
           copyTextFromSelector(button.getAttribute("data-copy"), button);
         });
+
+        window.addEventListener("scroll", onScroll, { passive: true });
+        window.addEventListener("resize", syncScrollUi);
+        syncScrollUi();
       })();
     </script>
   </body>

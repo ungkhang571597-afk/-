@@ -1,16 +1,13 @@
 (function () {
   var header = document.querySelector(".site-header");
-  var scrollProgressBar = document.querySelector(".scroll-progress-bar");
   var navLinks = Array.prototype.slice.call(document.querySelectorAll(".nav a[href^='#']"));
   var sections = navLinks
     .map(function (link) {
       return document.querySelector(link.getAttribute("href"));
     })
     .filter(Boolean);
-  var revealItems = Array.prototype.slice.call(document.querySelectorAll(".reveal-on-scroll"));
   var backToTop = document.getElementById("back-to-top");
   var toast = document.getElementById("toast");
-  var lastScrollY = window.scrollY || 0;
   var ticking = false;
 
   function updateHeaderState() {
@@ -19,35 +16,11 @@
     }
 
     var currentY = window.scrollY || window.pageYOffset || 0;
-    var isTop = currentY < 36;
-
-    header.classList.toggle("is-top", isTop);
-    header.classList.toggle("is-scrolled", !isTop);
-
-    if (isTop) {
-      header.classList.remove("is-hidden");
-    } else if (currentY > lastScrollY + 12) {
-      header.classList.add("is-hidden");
-    } else if (currentY < lastScrollY - 12) {
-      header.classList.remove("is-hidden");
-    }
+    header.classList.toggle("is-scrolled", currentY > 18);
 
     if (backToTop) {
       backToTop.classList.toggle("show", currentY > 560);
     }
-
-    lastScrollY = currentY;
-  }
-
-  function updateScrollProgress() {
-    if (!scrollProgressBar) {
-      return;
-    }
-
-    var doc = document.documentElement;
-    var scrollable = doc.scrollHeight - window.innerHeight;
-    var progress = scrollable > 0 ? Math.min(Math.max(window.scrollY / scrollable, 0), 1) : 0;
-    scrollProgressBar.style.transform = "scaleX(" + progress + ")";
   }
 
   function updateActiveNav() {
@@ -78,44 +51,8 @@
 
   function syncScrollUi() {
     updateHeaderState();
-    updateScrollProgress();
     updateActiveNav();
     ticking = false;
-  }
-
-  function setupReveal() {
-    if (!revealItems.length) {
-      return;
-    }
-
-    if (!("IntersectionObserver" in window)) {
-      revealItems.forEach(function (item) {
-        item.classList.add("is-visible");
-      });
-      return;
-    }
-
-    var observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) {
-            return;
-          }
-
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        });
-      },
-      {
-        threshold: 0.16,
-        rootMargin: "0px 0px -8% 0px"
-      }
-    );
-
-    revealItems.forEach(function (item) {
-      item.classList.add("reveal-pending");
-      observer.observe(item);
-    });
   }
 
   function showToast(text) {
@@ -230,6 +167,5 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", syncScrollUi);
 
-  setupReveal();
   syncScrollUi();
 })();

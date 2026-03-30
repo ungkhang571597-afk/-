@@ -6,8 +6,10 @@
       return document.querySelector(link.getAttribute("href"));
     })
     .filter(Boolean);
+  var revealItems = Array.prototype.slice.call(document.querySelectorAll(".reveal-on-scroll"));
   var backToTop = document.getElementById("back-to-top");
   var toast = document.getElementById("toast");
+  var lastScrollY = window.scrollY || 0;
   var ticking = false;
 
   function updateHeaderState() {
@@ -16,11 +18,24 @@
     }
 
     var currentY = window.scrollY || window.pageYOffset || 0;
-    header.classList.toggle("is-scrolled", currentY > 18);
+    var isTop = currentY < 36;
+
+    header.classList.toggle("is-top", isTop);
+    header.classList.toggle("is-scrolled", !isTop);
+
+    if (isTop) {
+      header.classList.remove("is-hidden");
+    } else if (currentY > lastScrollY + 12) {
+      header.classList.add("is-hidden");
+    } else if (currentY < lastScrollY - 12) {
+      header.classList.remove("is-hidden");
+    }
 
     if (backToTop) {
       backToTop.classList.toggle("show", currentY > 560);
     }
+
+    lastScrollY = currentY;
   }
 
   function updateActiveNav() {
@@ -53,6 +68,41 @@
     updateHeaderState();
     updateActiveNav();
     ticking = false;
+  }
+
+  function setupReveal() {
+    if (!revealItems.length) {
+      return;
+    }
+
+    if (!("IntersectionObserver" in window)) {
+      revealItems.forEach(function (item) {
+        item.classList.add("is-visible");
+      });
+      return;
+    }
+
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.16,
+        rootMargin: "0px 0px -8% 0px"
+      }
+    );
+
+    revealItems.forEach(function (item) {
+      item.classList.add("reveal-pending");
+      observer.observe(item);
+    });
   }
 
   function showToast(text) {
@@ -167,5 +217,6 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", syncScrollUi);
 
+  setupReveal();
   syncScrollUi();
 })();

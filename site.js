@@ -1,6 +1,8 @@
 (function () {
   var header = document.querySelector(".site-header");
-  var navLinks = Array.prototype.slice.call(document.querySelectorAll(".nav a[href^='#']"));
+  var menuToggle = document.querySelector(".menu-toggle");
+  var nav = document.getElementById("site-nav");
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll(".site-nav a[href^='#']"));
   var sections = navLinks
     .map(function (link) {
       return document.querySelector(link.getAttribute("href"));
@@ -9,33 +11,18 @@
   var revealItems = Array.prototype.slice.call(document.querySelectorAll(".reveal-on-scroll"));
   var backToTop = document.getElementById("back-to-top");
   var toast = document.getElementById("toast");
-  var lastScrollY = window.scrollY || 0;
   var ticking = false;
 
   function updateHeaderState() {
-    if (!header) {
-      return;
-    }
-
     var currentY = window.scrollY || window.pageYOffset || 0;
-    var isTop = currentY < 36;
 
-    header.classList.toggle("is-top", isTop);
-    header.classList.toggle("is-scrolled", !isTop);
-
-    if (isTop) {
-      header.classList.remove("is-hidden");
-    } else if (currentY > lastScrollY + 12) {
-      header.classList.add("is-hidden");
-    } else if (currentY < lastScrollY - 12) {
-      header.classList.remove("is-hidden");
+    if (header) {
+      header.classList.toggle("is-scrolled", currentY > 24);
     }
 
     if (backToTop) {
       backToTop.classList.toggle("show", currentY > 560);
     }
-
-    lastScrollY = currentY;
   }
 
   function updateActiveNav() {
@@ -54,7 +41,7 @@
 
     navLinks.forEach(function (link) {
       var isActive = currentId && link.getAttribute("href") === "#" + currentId;
-      link.classList.toggle("is-active", !!isActive);
+      link.classList.toggle("is-current", !!isActive);
 
       if (isActive) {
         link.setAttribute("aria-current", "location");
@@ -94,8 +81,8 @@
         });
       },
       {
-        threshold: 0.16,
-        rootMargin: "0px 0px -8% 0px"
+        threshold: 0.14,
+        rootMargin: "0px 0px -7% 0px"
       }
     );
 
@@ -123,18 +110,13 @@
       return;
     }
 
-    var label = button.querySelector("span:last-child");
-    if (!label) {
-      return;
-    }
-
     clearTimeout(button._tid);
-    label.textContent = isSuccess ? "已复制" : "失败";
+    button.textContent = isSuccess ? "已复制" : "失败";
     button.classList.toggle("is-copied", isSuccess);
     button.classList.toggle("is-failed", !isSuccess);
 
     button._tid = window.setTimeout(function () {
-      label.textContent = "复制";
+      button.textContent = "复制";
       button.classList.remove("is-copied");
       button.classList.remove("is-failed");
     }, 1600);
@@ -169,11 +151,7 @@
 
       try {
         var copied = document.execCommand("copy");
-        if (copied) {
-          onSuccess();
-        } else {
-          onFail();
-        }
+        copied ? onSuccess() : onFail();
       } catch (error) {
         onFail();
       }
@@ -188,6 +166,13 @@
     }
   }
 
+  function closeMenu() {
+    document.body.classList.remove("nav-open");
+    if (menuToggle) {
+      menuToggle.setAttribute("aria-expanded", "false");
+    }
+  }
+
   function onScroll() {
     if (ticking) {
       return;
@@ -197,21 +182,33 @@
     window.requestAnimationFrame(syncScrollUi);
   }
 
+  if (menuToggle && nav) {
+    menuToggle.addEventListener("click", function () {
+      var shouldOpen = !document.body.classList.contains("nav-open");
+      document.body.classList.toggle("nav-open", shouldOpen);
+      menuToggle.setAttribute("aria-expanded", shouldOpen ? "true" : "false");
+    });
+  }
+
   document.addEventListener("click", function (event) {
     var backButton = event.target.closest("#back-to-top");
     if (backButton) {
       event.preventDefault();
       window.scrollTo({ top: 0, behavior: "smooth" });
+      closeMenu();
       return;
     }
 
-    var button = event.target.closest(".copy-btn");
-    if (!button) {
+    var copyButton = event.target.closest("[data-copy]");
+    if (copyButton) {
+      event.preventDefault();
+      copyTextFromSelector(copyButton.getAttribute("data-copy"), copyButton);
       return;
     }
 
-    event.preventDefault();
-    copyTextFromSelector(button.getAttribute("data-copy"), button);
+    if (event.target.closest(".site-nav a")) {
+      closeMenu();
+    }
   });
 
   window.addEventListener("scroll", onScroll, { passive: true });

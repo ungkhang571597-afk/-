@@ -1731,8 +1731,52 @@ h3 {
 }
 
 @media (max-width: 520px) {
+  :root {
+    --header-height: 66px;
+  }
+
   .shell {
     width: min(100% - 24px, var(--site-width));
+  }
+
+  .site-header,
+  .header-inner {
+    min-height: var(--header-height);
+  }
+
+  .brand {
+    gap: 10px;
+  }
+
+  .brand-mark {
+    width: 42px;
+    height: 42px;
+    border-radius: 7px;
+    font-size: 17px;
+  }
+
+  .brand-copy strong {
+    font-size: 20px;
+  }
+
+  .menu-toggle {
+    width: 42px;
+    height: 38px;
+  }
+
+  .menu-toggle span:not(.sr-only) {
+    width: 30px;
+    height: 3px;
+    margin: 5px auto;
+  }
+
+  .site-nav {
+    padding-top: 10px;
+    padding-bottom: 14px;
+  }
+
+  .site-nav a {
+    padding: 11px 0;
   }
 
   .page-hero h1,
@@ -1741,15 +1785,27 @@ h3 {
     font-size: 48px;
   }
 
+  .eyebrow,
+  .breadcrumbs {
+    font-size: 12px;
+    gap: 10px;
+  }
+
+  .eyebrow::before,
+  .breadcrumbs::before {
+    width: 36px;
+  }
+
   .home-hero h1 {
-    margin-top: 22px;
-    font-size: clamp(76px, 22vw, 96px);
-    line-height: 0.98;
+    margin-top: 17px;
+    font-size: clamp(64px, 19vw, 78px);
+    line-height: 0.94;
   }
 
   .hero-line {
-    margin-top: 18px;
-    font-size: 38px;
+    margin-top: 14px;
+    font-size: 31px;
+    line-height: 1.08;
   }
 
   .hero-summary,
@@ -1757,51 +1813,64 @@ h3 {
   .contact-teaser p,
   .case-body p,
   .contact-copy > p:last-of-type {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .hero-copy {
-    padding: 30px 0 18px;
+    padding: 24px 0 14px;
   }
 
   .hero-summary {
-    margin-top: 18px;
+    margin-top: 14px;
+    line-height: 1.7;
   }
 
   .hero-actions {
-    gap: 9px;
-    margin-top: 18px;
+    gap: 8px;
+    margin-top: 14px;
   }
 
   .btn {
-    min-height: 48px;
+    min-height: 43px;
+    min-width: 0;
+    padding: 0 12px 0 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    letter-spacing: 0.01em;
+  }
+
+  .btn span[aria-hidden="true"] {
+    width: 34px;
+    height: 32px;
+    padding-left: 12px;
+    font-size: 19px;
   }
 
   .trust-band {
-    padding-bottom: 16px;
+    padding-bottom: 14px;
+  }
+
+  .trust-band .trust-grid {
+    width: min(100% - 24px, var(--site-width));
+    border-radius: 16px;
   }
 
   .trust-grid article {
-    padding: 14px 6px;
+    padding: 12px 5px;
   }
 
-  .metric-icon {
-    width: 24px;
-    height: 24px;
-  }
-
-  .metric-icon::after {
-    left: 11px;
-    top: 5px;
-    height: 14px;
+  .trust-grid .metric-icon {
+    display: none;
   }
 
   .trust-grid strong {
-    font-size: 27px;
+    font-size: 25px;
   }
 
   .trust-grid small {
-    font-size: 11px;
+    margin-top: 3px;
+    font-size: 10.5px;
+    line-height: 1.35;
   }
 
   .section {

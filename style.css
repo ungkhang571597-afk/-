@@ -16,10 +16,12 @@
   --site-width: 1440px;
   --header-height: 88px;
   --paper-texture: url("assets/paper-grain.svg");
-  --ink-hero: url("assets/ink-hero.svg");
-  --case-roof: url("assets/case-roof.svg");
-  --case-leaf: url("assets/case-leaf.svg");
-  --about-ink: url("assets/about-ink.svg");
+  --ink-hero: url("assets/brand/hero-desktop.webp");
+  --hero-mobile: url("assets/brand/hero-mobile.webp");
+  --case-roof: url("assets/brand/case-yanxin-roof.webp");
+  --case-leaf: url("assets/brand/case-mengli-leaf.webp");
+  --about-ink: url("assets/brand/about-ink.webp");
+  --contact-brush: url("assets/brand/contact-brush.webp");
   --seal-mark: url("assets/seal.svg");
   --font-display: "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", "Iowan Old Style", Georgia, serif;
   --font-body: "Avenir Next", "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
@@ -857,8 +859,8 @@ h3 {
 
 .contact-hero::after {
   width: 42%;
-  background: var(--about-ink) right center / cover no-repeat;
-  opacity: 0.42;
+  background: var(--contact-brush) right center / cover no-repeat;
+  opacity: 0.82;
 }
 
 .page-hero-grid,
@@ -1350,7 +1352,7 @@ h3 {
   .hero-left {
     background:
       linear-gradient(90deg, rgba(9, 11, 10, 0.98) 0%, rgba(9, 11, 10, 0.9) 46%, rgba(9, 11, 10, 0.42) 100%),
-      var(--ink-hero) center top / cover no-repeat,
+      var(--hero-mobile) center top / cover no-repeat,
       var(--ink);
     color: var(--ivory);
   }

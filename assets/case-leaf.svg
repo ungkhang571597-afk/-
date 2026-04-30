@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="430" viewBox="0 0 980 430" fill="none">
+  <defs>
+    <linearGradient id="leafBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#11130f" />
+      <stop offset="0.6" stop-color="#262b1d" />
+      <stop offset="1" stop-color="#0a0b09" />
+    </linearGradient>
+    <filter id="grain" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" seed="17" />
+      <feColorMatrix type="saturate" values="0.2" />
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.14" />
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="980" height="430" fill="url(#leafBg)" />
+  <rect width="980" height="430" filter="url(#grain)" opacity="0.68" />
+  <path d="M566 418C596 296 652 188 760 78" stroke="#a7a878" stroke-opacity="0.42" stroke-width="4" stroke-linecap="round" />
+  <path d="M604 389C628 278 704 160 842 36" stroke="#879064" stroke-opacity="0.38" stroke-width="3" stroke-linecap="round" />
+  <path d="M640 416C704 272 790 178 968 70" stroke="#878e60" stroke-opacity="0.34" stroke-width="3" stroke-linecap="round" />
+  <path d="M590 338C642 248 714 188 826 151C742 231 668 292 590 338Z" fill="#7d8b5c" opacity="0.42" />
+  <path d="M626 386C700 250 810 160 980 110C879 230 762 322 626 386Z" fill="#72804f" opacity="0.36" />
+  <path d="M673 428C750 314 854 230 980 196V300C872 340 786 384 673 428Z" fill="#8b9464" opacity="0.28" />
+  <path d="M528 414C554 294 606 208 694 130C640 248 590 342 528 414Z" fill="#66734d" opacity="0.4" />
+  <path d="M92 0V430M232 0V430M372 0V430M512 0V430M652 0V430M792 0V430M932 0V430M0 108H980M0 216H980M0 324H980" stroke="#f2e7d4" stroke-opacity="0.045" />
+  <path d="M88 346H272M180 254V426" stroke="#c89437" stroke-opacity="0.24" />
+</svg>

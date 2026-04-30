@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="620" viewBox="0 0 980 620" fill="none">
+  <defs>
+    <linearGradient id="fade" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#090b0a" />
+      <stop offset="0.58" stop-color="#11140f" />
+      <stop offset="1" stop-color="#454837" />
+    </linearGradient>
+    <filter id="rough" x="-15%" y="-15%" width="130%" height="130%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018 0.09" numOctaves="4" seed="11" />
+      <feDisplacementMap in="SourceGraphic" scale="23" />
+    </filter>
+    <filter id="soft" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="2.2" />
+    </filter>
+  </defs>
+  <rect width="980" height="620" fill="url(#fade)" />
+  <rect x="596" y="-42" width="430" height="710" fill="#e9dfcf" opacity="0.96" />
+  <rect x="632" y="-18" width="320" height="620" fill="#f6efe3" opacity="0.78" />
+  <path d="M620 -50C650 82 606 178 701 246C780 303 732 409 777 522C807 597 895 626 995 664L995 -50H620Z" fill="#0a0c0b" filter="url(#rough)" opacity="0.84" />
+  <path d="M560 116C642 102 706 92 765 55C846 4 915 18 996 70V-48H560V116Z" fill="#242719" opacity="0.72" filter="url(#rough)" />
+  <path d="M552 226C614 194 655 184 722 194C820 209 895 165 990 110V282C918 311 832 356 734 326C655 302 601 313 552 350V226Z" fill="#0e100d" opacity="0.84" filter="url(#rough)" />
+  <path d="M602 390C655 344 707 339 760 366C831 402 895 372 984 310V618H720C702 560 655 526 602 504C555 485 546 436 602 390Z" fill="#090b0a" opacity="0.9" filter="url(#rough)" />
+  <path d="M806 -20C766 92 742 184 764 278C790 389 744 490 700 640H1002V-20H806Z" fill="#f6efe3" opacity="0.38" filter="url(#rough)" />
+  <path d="M565 154C641 177 706 174 780 139M566 251C661 272 760 258 870 215M566 468C673 430 780 422 952 447" stroke="#f1e8d8" stroke-opacity="0.18" stroke-width="2" filter="url(#soft)" />
+  <path d="M88 0V620M226 0V620M364 0V620M502 0V620M640 0V620M778 0V620M916 0V620M0 108H980M0 232H980M0 356H980M0 480H980" stroke="#f8efdf" stroke-opacity="0.055" />
+  <path d="M118 484H312M214 388V580" stroke="#c89437" stroke-opacity="0.35" stroke-width="1" />
+  <rect x="904" y="510" width="34" height="34" stroke="#b56d35" stroke-width="1.7" />
+  <path d="M912 520H930M912 528H930M918 516V538M925 516V538" stroke="#b56d35" stroke-width="1.2" />
+</svg>

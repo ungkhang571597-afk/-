@@ -8,6 +8,7 @@
   --olive: #555845;
   --gold: #d6a044;
   --gold-2: #a87528;
+  --gold-soft: rgba(168, 117, 40, 0.72);
   --line: rgba(12, 13, 12, 0.16);
   --line-dark: rgba(255, 255, 255, 0.18);
   --muted: #6d675d;
@@ -35,6 +36,10 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-top: calc(var(--header-height) + 28px);
 }
 
 body {
@@ -225,10 +230,27 @@ a {
 }
 
 .home-hero {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   background: var(--paper);
   overflow: hidden;
+}
+
+.home-hero::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  left: 51.2%;
+  width: 96px;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(251, 247, 238, 0.22), rgba(9, 11, 10, 0.24), transparent),
+    var(--paper-texture);
+  mix-blend-mode: multiply;
+  opacity: 0.58;
 }
 
 .hero-left {
@@ -314,8 +336,8 @@ h3 {
   border-radius: 7px;
   border: 1px solid transparent;
   font-size: 19px;
-  font-weight: 800;
-  letter-spacing: 0.03em;
+  font-weight: 750;
+  letter-spacing: 0.01em;
   cursor: pointer;
   isolation: isolate;
   box-shadow: none;
@@ -486,7 +508,7 @@ h3 {
   right: 56px;
   bottom: 78px;
   width: min(520px, calc(100% - 112px));
-  display: grid;
+  display: none;
   grid-template-columns: repeat(3, 1fr);
   background: rgba(9, 11, 10, 0.78);
   border: 1px solid rgba(255, 255, 255, 0.14);
@@ -626,9 +648,44 @@ h3 {
 
 .section-head a,
 .text-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   color: var(--ink);
   font-weight: 800;
   font-size: 18px;
+  transition: color 0.18s ease;
+}
+
+.section-head a::after,
+.text-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0;
+  transform: scaleX(0.72);
+  transform-origin: left center;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.section-head a:hover,
+.section-head a:focus-visible,
+.text-link:hover,
+.text-link:focus-visible {
+  color: var(--gold-2);
+}
+
+.section-head a:hover::after,
+.section-head a:focus-visible::after,
+.text-link:hover::after,
+.text-link:focus-visible::after {
+  opacity: 0.75;
+  transform: scaleX(1);
 }
 
 .gold-link {
@@ -647,6 +704,13 @@ h3 {
   background: var(--ink);
   color: var(--ivory);
   border: 1px solid rgba(9, 11, 10, 0.18);
+  transition: transform 0.22s ease, border-color 0.22s ease;
+}
+
+.case-card:hover,
+.case-card:focus-within {
+  transform: translateY(-4px);
+  border-color: rgba(214, 160, 68, 0.46);
 }
 
 .case-media {
@@ -657,6 +721,13 @@ h3 {
     var(--case-roof) center / cover no-repeat,
     var(--olive);
   overflow: hidden;
+  transition: transform 0.42s ease, filter 0.42s ease;
+}
+
+.case-card:hover .case-media,
+.case-card:focus-within .case-media {
+  transform: scale(1.018);
+  filter: contrast(1.04);
 }
 
 .case-media::after {
@@ -744,6 +815,45 @@ h3 {
   display: inline-flex;
   gap: 24px;
   margin-top: 28px;
+}
+
+.case-takeaway {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 980px);
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border: 1px solid rgba(9, 11, 10, 0.14);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(120deg, rgba(214, 160, 68, 0.08), transparent 48%),
+    rgba(251, 247, 238, 0.74);
+  backdrop-filter: blur(2px);
+}
+
+.case-takeaway article {
+  padding: 18px 22px;
+  border-right: 1px solid var(--line);
+}
+
+.case-takeaway article:last-child {
+  border-right: 0;
+}
+
+.case-takeaway strong {
+  display: block;
+  color: var(--gold-2);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+}
+
+.case-takeaway span {
+  display: block;
+  margin-top: 6px;
+  color: #27231f;
+  font-size: 16px;
+  line-height: 1.55;
 }
 
 .split-layout {
@@ -1245,9 +1355,9 @@ h3 {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) 310px minmax(340px, 0.72fr);
+  grid-template-columns: minmax(0, 0.95fr) 380px minmax(300px, 0.58fr);
   gap: 30px;
-  align-items: center;
+  align-items: start;
 }
 
 .contact-copy h1 {
@@ -1290,6 +1400,7 @@ h3 {
 }
 
 .copy-chip {
+  min-inline-size: 82px;
   min-height: 38px;
   padding: 0 14px;
   border: 1px solid var(--line);
@@ -1298,6 +1409,13 @@ h3 {
   color: var(--ink);
   font-weight: 800;
   cursor: pointer;
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+.copy-chip:hover,
+.copy-chip:focus-visible {
+  border-color: rgba(214, 160, 68, 0.68);
+  transform: translateY(-1px);
 }
 
 .copy-chip.is-copied {
@@ -1311,8 +1429,14 @@ h3 {
 }
 
 .qr-card {
-  padding: 32px 28px;
+  padding: 34px 30px;
   text-align: center;
+  border-color: rgba(214, 160, 68, 0.36);
+  background:
+    linear-gradient(180deg, rgba(251, 247, 238, 0.96), rgba(232, 223, 209, 0.68)),
+    var(--paper-texture);
+  box-shadow: 0 26px 70px rgba(9, 11, 10, 0.1);
+  transform: translateY(-8px);
 }
 
 .qr-card .eyebrow::before {
@@ -1344,7 +1468,8 @@ h3 {
 }
 
 .talk-card {
-  min-height: 485px;
+  min-height: 0;
+  opacity: 0.92;
 }
 
 .contact-trust {
@@ -1387,7 +1512,7 @@ h3 {
   opacity: 0;
   pointer-events: none;
   transform: translateY(12px);
-  transition: opacity 0.22s ease, transform 0.22s ease;
+  transition: opacity 0.22s ease, transform 0.22s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
 .back-to-top.show {
@@ -1396,14 +1521,32 @@ h3 {
   transform: translateY(0);
 }
 
+.back-to-top:hover,
+.back-to-top:focus-visible {
+  color: #efc66a;
+  border-color: rgba(214, 160, 68, 0.68);
+  transform: translateY(-2px);
+}
+
 .reveal-on-scroll {
-  --reveal-offset: 0px;
+  --reveal-offset: 18px;
+  --reveal-delay: 0ms;
   opacity: 1;
   transform: translateY(var(--reveal-offset));
-  transition: opacity 0.45s ease, transform 0.45s ease;
+  transition: opacity 0.5s ease var(--reveal-delay), transform 0.5s ease var(--reveal-delay);
 }
 
 .reveal-on-scroll.reveal-pending {
+  opacity: 0;
+  --reveal-offset: 18px;
+}
+
+.case-card.reveal-pending {
+  opacity: 1;
+  --reveal-offset: 0px;
+}
+
+.case-hero .result-band.reveal-pending {
   opacity: 1;
   --reveal-offset: 0px;
 }
@@ -1869,8 +2012,20 @@ h3 {
 
   .trust-grid small {
     margin-top: 3px;
-    font-size: 10.5px;
+    font-size: 11.5px;
     line-height: 1.35;
+  }
+
+  .case-media {
+    min-height: 145px;
+  }
+
+  .case-body {
+    padding: 20px;
+  }
+
+  .case-body h3 {
+    font-size: 30px;
   }
 
   .section {

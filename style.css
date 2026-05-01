@@ -234,9 +234,8 @@ a {
   display: grid;
   grid-template-columns: minmax(0, 1.12fr) minmax(340px, 0.88fr);
   background:
-    radial-gradient(circle at 18% 22%, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0) 42%),
-    radial-gradient(circle at 40% 58%, rgba(74, 70, 62, 0.035), rgba(74, 70, 62, 0) 28%),
-    linear-gradient(116deg, #f5f2eb 0%, #f2efe8 30%, #e7e1d7 48%, #5a5650 68%, #0c0d0d 100%);
+    radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0) 60%),
+    linear-gradient(114deg, #f6f3ed 0%, #f2eee7 26%, #e8e1d6 42%, #b2ada4 56%, #3a3732 72%, #0c0d0d 100%);
   overflow: hidden;
   isolation: isolate;
 }
@@ -248,10 +247,9 @@ a {
   z-index: 0;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(245, 242, 235, 0.9) 0%, rgba(245, 242, 235, 0.82) 18%, rgba(245, 242, 235, 0.66) 32%, rgba(245, 242, 235, 0.34) 46%, rgba(245, 242, 235, 0) 60%, rgba(9, 11, 10, 0.14) 78%, rgba(9, 11, 10, 0.54) 100%),
-    radial-gradient(circle at 22% 34%, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0) 38%),
-    var(--ink-hero) 88% 44% / auto 128% no-repeat;
-  opacity: 0.96;
+    linear-gradient(90deg, rgba(246, 243, 237, 0.9) 0%, rgba(246, 243, 237, 0.82) 14%, rgba(246, 243, 237, 0.72) 28%, rgba(246, 243, 237, 0.5) 42%, rgba(246, 243, 237, 0.22) 54%, rgba(246, 243, 237, 0.04) 64%, rgba(9, 11, 10, 0.08) 84%, rgba(9, 11, 10, 0.4) 100%),
+    var(--ink-hero) 76% 46% / cover no-repeat;
+  opacity: 0.95;
 }
 
 .home-hero::after {
@@ -261,12 +259,11 @@ a {
   z-index: 1;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(246, 243, 237, 0.32) 0%, rgba(246, 243, 237, 0.18) 18%, rgba(246, 243, 237, 0.06) 34%, rgba(246, 243, 237, 0) 48%),
-    radial-gradient(circle at 56% 42%, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0) 22%),
+    linear-gradient(90deg, rgba(246, 243, 237, 0.14) 0%, rgba(246, 243, 237, 0.08) 22%, rgba(246, 243, 237, 0.03) 38%, rgba(246, 243, 237, 0) 56%),
     linear-gradient(142deg, transparent 56%, rgba(10, 11, 10, 0.1) 78%, rgba(10, 11, 10, 0.18) 100%),
     var(--paper-texture);
   mix-blend-mode: normal;
-  opacity: 0.56;
+  opacity: 0.42;
 }
 
 .hero-left {

@@ -234,9 +234,9 @@ a {
   display: grid;
   grid-template-columns: minmax(0, 1.12fr) minmax(340px, 0.88fr);
   background:
-    radial-gradient(circle at 16% 18%, rgba(255, 255, 255, 0.88), transparent 24%),
-    radial-gradient(circle at 38% 56%, rgba(74, 70, 62, 0.05), transparent 20%),
-    linear-gradient(118deg, #f5f2eb 0%, #f1eee7 38%, #e8e2d8 54%, #2d2a25 74%, #0c0d0d 100%);
+    radial-gradient(circle at 18% 22%, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0) 42%),
+    radial-gradient(circle at 40% 58%, rgba(74, 70, 62, 0.035), rgba(74, 70, 62, 0) 28%),
+    linear-gradient(116deg, #f5f2eb 0%, #f2efe8 30%, #e7e1d7 48%, #5a5650 68%, #0c0d0d 100%);
   overflow: hidden;
   isolation: isolate;
 }
@@ -248,10 +248,10 @@ a {
   z-index: 0;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(245, 242, 235, 0.95) 0%, rgba(245, 242, 235, 0.82) 24%, rgba(245, 242, 235, 0.48) 40%, rgba(245, 242, 235, 0) 56%, rgba(9, 11, 10, 0.18) 70%, rgba(9, 11, 10, 0.64) 100%),
-    radial-gradient(circle at 26% 40%, rgba(255, 255, 255, 0.26), transparent 32%),
+    linear-gradient(90deg, rgba(245, 242, 235, 0.9) 0%, rgba(245, 242, 235, 0.82) 18%, rgba(245, 242, 235, 0.66) 32%, rgba(245, 242, 235, 0.34) 46%, rgba(245, 242, 235, 0) 60%, rgba(9, 11, 10, 0.14) 78%, rgba(9, 11, 10, 0.54) 100%),
+    radial-gradient(circle at 22% 34%, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0) 38%),
     var(--ink-hero) 88% 44% / auto 128% no-repeat;
-  opacity: 0.98;
+  opacity: 0.96;
 }
 
 .home-hero::after {
@@ -261,12 +261,12 @@ a {
   z-index: 1;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(246, 243, 237, 0.74) 0%, rgba(246, 243, 237, 0.38) 22%, rgba(246, 243, 237, 0.08) 40%, transparent 52%),
-    radial-gradient(circle at 54% 42%, rgba(255, 255, 255, 0.18), transparent 18%),
-    linear-gradient(140deg, transparent 58%, rgba(10, 11, 10, 0.12) 76%, rgba(10, 11, 10, 0.2) 100%),
+    linear-gradient(90deg, rgba(246, 243, 237, 0.32) 0%, rgba(246, 243, 237, 0.18) 18%, rgba(246, 243, 237, 0.06) 34%, rgba(246, 243, 237, 0) 48%),
+    radial-gradient(circle at 56% 42%, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0) 22%),
+    linear-gradient(142deg, transparent 56%, rgba(10, 11, 10, 0.1) 78%, rgba(10, 11, 10, 0.18) 100%),
     var(--paper-texture);
   mix-blend-mode: normal;
-  opacity: 0.72;
+  opacity: 0.56;
 }
 
 .hero-left {

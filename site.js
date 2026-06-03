@@ -10,6 +10,7 @@
     })
     .filter(Boolean);
   var revealItems = Array.prototype.slice.call(document.querySelectorAll(".reveal-on-scroll"));
+  var caseCards = Array.prototype.slice.call(document.querySelectorAll(".case-card"));
   var backToTop = document.getElementById("back-to-top");
   var toast = document.getElementById("toast");
   var mobileQuery = window.matchMedia ? window.matchMedia("(max-width: 860px)") : null;
@@ -157,7 +158,9 @@
     var label = copyLabelFor(selector);
 
     function onSuccess() {
-      showToast(label + "已复制");
+      if (isMobileNav()) {
+        showToast(label + "已复制");
+      }
       setCopiedState(button, true, label);
     }
 
@@ -173,7 +176,9 @@
       ta.style.position = "absolute";
       ta.style.left = "-9999px";
       document.body.appendChild(ta);
+      ta.focus();
       ta.select();
+      ta.setSelectionRange(0, text.length);
 
       try {
         var copied = document.execCommand("copy");
@@ -246,6 +251,19 @@
       syncMenuAccessibility();
     });
   }
+
+  caseCards.forEach(function (card) {
+    card.addEventListener("click", function (event) {
+      if (event.target.closest("a")) {
+        return;
+      }
+
+      var link = card.querySelector("a[href]");
+      if (link) {
+        link.click();
+      }
+    });
+  });
 
   document.addEventListener("click", function (event) {
     if (event.target.closest(".menu-toggle")) {

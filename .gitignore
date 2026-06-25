@@ -1,0 +1,8 @@
+backups/
+output/
+test-results/
+.playwright-mcp/
+*-local-v*.png
+*-preview-current.png
+audit-*.png
+assets/brand/candidates/

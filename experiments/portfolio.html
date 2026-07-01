@@ -219,6 +219,19 @@
         font-size: 13px;
         white-space: nowrap;
       }
+      .search-note {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 40px;
+        padding: 8px 12px;
+        border: 1px solid rgba(32, 25, 20, .18);
+        border-radius: 4px;
+        color: #6d5b4c;
+        background: rgba(244, 238, 228, .76);
+        font-size: 13px;
+        white-space: nowrap;
+      }
       @media (max-width: 840px) {
         .shell { width: min(100% - 32px, 1180px); padding-top: 38px; }
         header { grid-template-columns: 1fr; }
@@ -236,7 +249,8 @@
         .project-head { border-right: 0; border-bottom: 1px solid rgba(32, 25, 20, .1); }
         .accounts { padding: 0 20px; }
         .account { grid-template-columns: 1fr; gap: 10px; align-items: start; }
-        .open { width: fit-content; }
+        .open,
+        .search-note { width: fit-content; }
       }
     </style>
   </head>
@@ -258,8 +272,8 @@
 
       <section class="summary" aria-label="账号归档概览">
         <article><strong>3</strong><span>项目 / 品牌</span></article>
-        <article><strong>7</strong><span>账号入口</span></article>
-        <article><strong>2</strong><span>主要平台</span></article>
+        <article><strong>8</strong><span>账号入口</span></article>
+        <article><strong>3</strong><span>主要平台</span></article>
       </section>
 
       <section class="projects" aria-label="账号列表">
@@ -279,6 +293,11 @@
               <span class="platform">小红书</span>
               <div><strong>杭州太希智能科技</strong><small>科技产品传播 / 内容矩阵</small></div>
               <a class="open" href="https://www.xiaohongshu.com/user/profile/65b0c35c000000000d03fa49?xsec_token=ABkU6LkemMfs4mOXAqShXC-Ubr9b0d-tpgHBJuvpBOopI%3D&amp;xsec_source=pc_search" target="_blank" rel="noopener noreferrer">打开账号</a>
+            </div>
+            <div class="account">
+              <span class="platform">微信</span>
+              <div><strong>公众号 / 视频号</strong><small>微信搜索：太希智能</small></div>
+              <span class="search-note">微信搜索</span>
             </div>
           </div>
         </article>

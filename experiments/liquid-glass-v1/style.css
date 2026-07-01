@@ -487,6 +487,85 @@ h1 {
   padding: 28px;
 }
 
+.panel-portrait,
+.identity-chip {
+  position: relative;
+  z-index: 1;
+  display: inline-grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  max-width: 100%;
+  margin: 18px 0 4px;
+  padding: 8px 14px 8px 8px;
+  border: 1px solid rgba(var(--line), calc(var(--lineAlpha) + 0.08));
+  border-radius: 999px;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.04)),
+    rgba(var(--surfaceStrong), 0.56);
+  box-shadow:
+    0 18px 44px rgba(var(--shadow), calc(var(--shadowAlpha) * 0.72)),
+    inset 0 1px 0 rgba(255,255,255,0.18);
+  backdrop-filter: blur(18px) saturate(1.18);
+  -webkit-backdrop-filter: blur(18px) saturate(1.18);
+}
+
+.panel-portrait img,
+.identity-chip img {
+  width: 92px;
+  height: 92px;
+  object-fit: cover;
+  object-position: center 40%;
+  border-radius: 999px;
+}
+
+.panel-portrait figcaption,
+.identity-chip div {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.panel-portrait span,
+.identity-chip strong {
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.panel-portrait small,
+.identity-chip span {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.panel-portrait.compact,
+.qr-panel .panel-portrait {
+  grid-template-columns: 72px minmax(0, 1fr);
+  margin: 18px auto 16px;
+  text-align: left;
+}
+
+.panel-portrait.compact img,
+.qr-panel .panel-portrait img {
+  width: 72px;
+  height: 72px;
+}
+
+.case-author-chip {
+  margin: 18px 0 0;
+  grid-template-columns: 48px minmax(0, 1fr);
+  padding: 7px 14px 7px 7px;
+}
+
+.case-author-chip img {
+  width: 48px;
+  height: 48px;
+}
+
 .metric-stack {
   display: grid;
   gap: 14px;
@@ -1355,6 +1434,31 @@ h1 {
   .section-copy p,
   .case-intro > p:not(.breadcrumbs):not(.page-subtitle),
   .contact-teaser p {
+    font-size: 16px;
+  }
+
+  .panel-portrait,
+  .identity-chip {
+    grid-template-columns: 64px minmax(0, 1fr);
+    margin-top: 16px;
+    padding: 7px 12px 7px 7px;
+  }
+
+  .panel-portrait img,
+  .identity-chip img,
+  .panel-portrait.compact img,
+  .qr-panel .panel-portrait img {
+    width: 64px;
+    height: 64px;
+  }
+
+  .panel-portrait.compact,
+  .qr-panel .panel-portrait {
+    grid-template-columns: 64px minmax(0, 1fr);
+  }
+
+  .panel-portrait span,
+  .identity-chip strong {
     font-size: 16px;
   }
 

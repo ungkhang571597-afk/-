@@ -481,6 +481,82 @@ h1 {
   padding: 26px;
 }
 
+.panel-portrait,
+.identity-chip {
+  position: relative;
+  z-index: 1;
+  display: inline-grid;
+  grid-template-columns: 88px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  max-width: 100%;
+  margin: 18px 0 4px;
+  padding: 7px 14px 7px 7px;
+  border: 1px solid rgba(var(--line), .16);
+  border-radius: 4px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--paper-strong) 92%, transparent), color-mix(in srgb, var(--paper) 80%, transparent)),
+    var(--paper);
+  box-shadow: 0 18px 36px rgba(var(--shadow), .06);
+}
+
+.panel-portrait img,
+.identity-chip img {
+  width: 88px;
+  height: 88px;
+  object-fit: cover;
+  object-position: center 40%;
+  border-radius: 3px;
+  filter: saturate(.94) contrast(1.02);
+}
+
+.panel-portrait figcaption,
+.identity-chip div {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.panel-portrait span,
+.identity-chip strong {
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.panel-portrait small,
+.identity-chip span {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.panel-portrait.compact,
+.qr-panel .panel-portrait {
+  grid-template-columns: 68px minmax(0, 1fr);
+  margin: 18px auto 16px;
+  text-align: left;
+}
+
+.panel-portrait.compact img,
+.qr-panel .panel-portrait img {
+  width: 68px;
+  height: 68px;
+}
+
+.case-author-chip {
+  margin: 18px 0 0;
+  grid-template-columns: 46px minmax(0, 1fr);
+  padding: 6px 13px 6px 6px;
+}
+
+.case-author-chip img {
+  width: 46px;
+  height: 46px;
+}
+
 .metric-stack {
   display: grid;
   gap: 0;
@@ -1179,6 +1255,31 @@ h1 {
   .metric-stack > article {
     grid-template-columns: 1fr;
     gap: 6px;
+  }
+
+  .panel-portrait,
+  .identity-chip {
+    grid-template-columns: 62px minmax(0, 1fr);
+    margin-top: 16px;
+    padding: 6px 11px 6px 6px;
+  }
+
+  .panel-portrait img,
+  .identity-chip img,
+  .panel-portrait.compact img,
+  .qr-panel .panel-portrait img {
+    width: 62px;
+    height: 62px;
+  }
+
+  .panel-portrait.compact,
+  .qr-panel .panel-portrait {
+    grid-template-columns: 62px minmax(0, 1fr);
+  }
+
+  .panel-portrait span,
+  .identity-chip strong {
+    font-size: 16px;
   }
 
   .teaser-panel {

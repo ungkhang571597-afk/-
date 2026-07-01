@@ -30,6 +30,8 @@
   --about-ink: url("assets/brand/about-ink.webp");
   --about-ink-v2: url("assets/brand/about-ink-v2.webp");
   --contact-brush: url("assets/brand/contact-brush.webp");
+  --portrait-square: url("assets/brand/portrait-zt-square.webp");
+  --portrait-card: url("assets/brand/portrait-zt-card.webp");
   --seal-mark: url("assets/seal.svg");
   --font-display: "Noto Serif SC", "Source Han Serif SC", "Songti SC", "STSong", Georgia, serif;
   --font-body: "Noto Sans SC", "PingFang SC", "HarmonyOS Sans SC", "Microsoft YaHei", sans-serif;
@@ -480,6 +482,10 @@ h3 {
   background: none;
 }
 
+.hero-identity-chip {
+  display: none;
+}
+
 .ink-panel {
   position: absolute;
   inset: 0;
@@ -510,6 +516,56 @@ h3 {
   border-left: 1px solid rgba(214, 160, 68, 0.18);
   background: linear-gradient(135deg, rgba(214, 160, 68, 0.07), transparent 55%);
   opacity: 0.48;
+}
+
+.hero-portrait-card {
+  position: absolute;
+  top: 76px;
+  right: 78px;
+  z-index: 3;
+  width: clamp(174px, 15.6vw, 226px);
+  margin: 0;
+  padding: 10px;
+  border: 1px solid rgba(214, 160, 68, 0.34);
+  border-radius: 12px;
+  background:
+    linear-gradient(135deg, rgba(251, 247, 238, 0.14), rgba(251, 247, 238, 0.03)),
+    rgba(8, 10, 9, 0.76);
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.hero-portrait-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 42%;
+  border-radius: 8px;
+  filter: saturate(0.94) contrast(1.02);
+}
+
+.hero-portrait-card figcaption {
+  display: grid;
+  gap: 1px;
+  padding: 10px 2px 1px;
+  color: var(--ivory);
+}
+
+.hero-portrait-card figcaption span,
+.hero-identity-chip span {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.hero-portrait-card figcaption small,
+.hero-identity-chip small {
+  color: rgba(251, 247, 238, 0.68);
+  font-size: 12px;
+  line-height: 1.45;
 }
 
 .vertical-label {
@@ -1244,6 +1300,7 @@ h3 {
 }
 
 .about-hero .status-card {
+  position: relative;
   min-height: 268px;
   margin: 0;
   padding: 32px 32px;
@@ -1255,6 +1312,26 @@ h3 {
     var(--paper-texture);
   box-shadow: 0 20px 52px rgba(9, 11, 10, 0.26);
   transform: translateY(4px);
+}
+
+.status-portrait {
+  float: right;
+  width: 96px;
+  margin: 0 0 14px 18px;
+  padding: 5px;
+  border: 1px solid rgba(214, 160, 68, 0.38);
+  border-radius: 999px;
+  background: rgba(251, 247, 238, 0.1);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
+}
+
+.status-portrait img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center 40%;
+  border-radius: inherit;
 }
 
 .about-hero .status-card::after {
@@ -1527,8 +1604,53 @@ h3 {
   font-size: 17px;
 }
 
+.case-author-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 18px;
+  padding: 7px 14px 7px 7px;
+  border: 1px solid rgba(198, 146, 61, 0.26);
+  border-radius: 999px;
+  background:
+    linear-gradient(135deg, rgba(251, 247, 238, 0.94), rgba(241, 236, 227, 0.74)),
+    var(--paper-texture);
+  box-shadow: 0 14px 34px rgba(9, 11, 10, 0.1);
+}
+
+.case-author-chip img {
+  width: 46px;
+  height: 46px;
+  flex: 0 0 auto;
+  object-fit: cover;
+  object-position: center 40%;
+  border-radius: 999px;
+}
+
+.case-author-chip div {
+  display: grid;
+  gap: 1px;
+  min-width: 0;
+}
+
+.case-author-chip span {
+  color: var(--gold-2);
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.case-author-chip strong {
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
 .case-hero .page-subtitle,
 .case-hero .case-meta,
+.case-hero .case-author-chip,
 .case-hero .case-takeaway {
   max-width: 650px;
 }
@@ -1754,6 +1876,25 @@ h3 {
   transform: translateY(-8px);
 }
 
+.contact-portrait {
+  width: 92px;
+  margin: 14px auto 14px;
+  padding: 5px;
+  border: 1px solid rgba(198, 146, 61, 0.34);
+  border-radius: 999px;
+  background: rgba(251, 248, 241, 0.94);
+  box-shadow: 0 16px 34px rgba(9, 11, 10, 0.12);
+}
+
+.contact-portrait img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center 40%;
+  border-radius: inherit;
+}
+
 .qr-card .eyebrow::before {
   width: 40px;
 }
@@ -1907,6 +2048,37 @@ h3 {
     color: rgba(251, 247, 238, 0.76);
   }
 
+  .hero-identity-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    width: fit-content;
+    max-width: 100%;
+    margin-top: 22px;
+    padding: 7px 14px 7px 7px;
+    border: 1px solid rgba(214, 160, 68, 0.34);
+    border-radius: 999px;
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 42%),
+      rgba(9, 11, 10, 0.46);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
+  }
+
+  .hero-identity-chip img {
+    width: 58px;
+    height: 58px;
+    flex: 0 0 auto;
+    object-fit: cover;
+    object-position: center 40%;
+    border-radius: 999px;
+  }
+
+  .hero-identity-chip div {
+    display: grid;
+    gap: 1px;
+    min-width: 0;
+  }
+
   .btn-outline {
     background: rgba(9, 11, 10, 0.18);
     color: var(--ivory);
@@ -1967,6 +2139,11 @@ h3 {
     max-width: 560px;
     min-height: 0;
     transform: none;
+  }
+
+  .status-portrait {
+    width: 82px;
+    margin-left: 14px;
   }
 
   .about-story {
@@ -2100,6 +2277,20 @@ h3 {
     gap: 10px;
     margin-top: 22px;
     flex-wrap: wrap;
+  }
+
+  .case-author-chip {
+    gap: 10px;
+    padding-right: 12px;
+  }
+
+  .case-author-chip img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .contact-portrait {
+    width: 82px;
   }
 
   .btn {

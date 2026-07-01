@@ -249,7 +249,7 @@
 
   var year = document.getElementById("year");
   if (year) {
-    year.textContent = new Date().getFullYear();
+    year.textContent = "2025";
   }
 
   window.addEventListener("scroll", onScroll, { passive: true });

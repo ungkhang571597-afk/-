@@ -28,9 +28,31 @@
       }
       header {
         display: grid;
-        gap: 14px;
-        max-width: 820px;
+        grid-template-columns: 132px minmax(0, 1fr);
+        align-items: end;
+        gap: 24px;
+        max-width: 920px;
         margin-bottom: 42px;
+      }
+      .preview-identity {
+        margin: 0;
+        padding: 7px;
+        border: 1px solid rgba(32, 25, 20, .16);
+        border-radius: 6px;
+        background: rgba(255, 252, 245, .72);
+        box-shadow: 0 18px 40px rgba(69, 50, 32, .1);
+      }
+      .preview-identity img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        object-position: center 40%;
+        border-radius: 4px;
+      }
+      .intro-copy {
+        display: grid;
+        gap: 14px;
       }
       .badge {
         width: fit-content;
@@ -79,6 +101,9 @@
       }
       .grid.minimal {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      .grid.portfolio {
+        grid-template-columns: minmax(0, 1fr);
       }
       .card {
         position: relative;
@@ -139,6 +164,32 @@
         background: #f0c879;
         font-size: 12px;
       }
+      .portfolio-card {
+        min-height: 260px;
+        grid-template-columns: minmax(260px, .42fr) minmax(0, 1fr);
+        grid-template-rows: auto;
+      }
+      .portfolio-card .media {
+        min-height: 260px;
+        background:
+          linear-gradient(135deg, rgba(32, 25, 20, .76), rgba(32, 25, 20, .12)),
+          linear-gradient(90deg, rgba(255, 252, 245, .18) 0 1px, transparent 1px) 0 0 / 28px 28px,
+          linear-gradient(0deg, rgba(255, 252, 245, .12) 0 1px, transparent 1px) 0 0 / 28px 28px,
+          url('../assets/brand/portrait-zt-card.webp') center / cover no-repeat;
+        border-bottom: 0;
+        border-right: 1px solid rgba(32, 25, 20, .1);
+      }
+      .portfolio-card .body {
+        align-content: center;
+      }
+      .portfolio-card .button {
+        width: fit-content;
+      }
+      .button.is-disabled {
+        color: #6d5b4c;
+        background: rgba(255, 252, 245, .68);
+        border-color: rgba(32, 25, 20, .18);
+      }
       @media (max-width: 1040px) {
         .grid,
         .grid.minimal {
@@ -150,6 +201,11 @@
           width: min(100% - 32px, 1220px);
           padding: 38px 0;
         }
+        header {
+          grid-template-columns: 82px minmax(0, 1fr);
+          align-items: start;
+          gap: 16px;
+        }
         .group-head {
           display: grid;
         }
@@ -160,16 +216,42 @@
         .card {
           min-height: auto;
         }
+        .portfolio-card {
+          grid-template-columns: 1fr;
+        }
+        .portfolio-card .media {
+          min-height: 190px;
+          border-right: 0;
+          border-bottom: 1px solid rgba(32, 25, 20, .1);
+        }
       }
     </style>
   </head>
   <body>
     <main class="shell">
       <header>
-        <span class="badge">线上预览 / 实验版本</span>
-        <h1>钟滔网站视觉版本</h1>
-        <p class="lead">上面保留液态磨玻璃方向，下面新增三套从简历 PDF 推导出来的极简方向。它们都是完整 5 页站点，可以直接进入每一版看首页、关于、案例和联系页。</p>
+        <figure class="preview-identity">
+          <img src="../assets/brand/portrait-zt-square.webp" alt="钟滔头像" loading="eager" decoding="async" />
+        </figure>
+        <div class="intro-copy">
+          <span class="badge">线上预览 / 实验版本</span>
+          <h1>钟滔网站视觉版本</h1>
+          <p class="lead">上面保留液态磨玻璃方向，下面新增三套从简历 PDF 推导出来的极简方向。它们都是完整 5 页站点，可以直接进入每一版看首页、关于、案例和联系页。</p>
+        </div>
       </header>
+
+      <section class="group" aria-label="作品集入口">
+        <div class="group-head">
+          <h2>作品集入口</h2>
+          <p>后续集中建设作品、项目和素材的位置，当前先保留入口。</p>
+        </div>
+        <div class="grid portfolio">
+          <article class="card portfolio-card">
+            <div class="media" aria-hidden="true"></div>
+            <div class="body"><div><h3>作品集</h3><p>这里先收纳已经梳理出来的账号作品，后续再继续补项目过程、素材和复盘。</p></div><a class="button" href="portfolio.html">进入作品集</a></div>
+          </article>
+        </div>
+      </section>
 
       <section class="group" aria-label="液态磨玻璃版本">
         <div class="group-head">

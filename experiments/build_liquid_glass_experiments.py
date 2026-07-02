@@ -353,7 +353,7 @@ def home_main() -> str:
               <figcaption><span>钟滔</span><small>新媒体运营 / 内容获客</small></figcaption>
             </figure>
             <div class="metric-stack">
-              <div><strong>2700+</strong><span>同城商家累计获客</span></div>
+              <div><strong>2900+</strong><span>同城商家累计获客</span></div>
               <div><strong>216 万</strong><span>12 个月 GMV</span></div>
               <div><strong>20%</strong><span>自然流转化率</span></div>
             </div>
@@ -550,7 +550,7 @@ def contact_main() -> str:
           <div class="trust-panel glass-card reveal-on-scroll">
             <h2>一些结果</h2>
             <div class="metric-stack">
-              <div><strong>2700+</strong><span>同城商家累计获客</span></div>
+              <div><strong>2900+</strong><span>同城商家累计获客</span></div>
               <div><strong>216 万</strong><span>GMV</span></div>
               <div><strong>20%</strong><span>自然流转化率</span></div>
             </div>

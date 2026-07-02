@@ -1495,8 +1495,8 @@ def write_site(theme_key: str) -> None:
 
     (site_dir / "index.html").write_text(
         page(
-            "钟滔 | 新媒体运营作品集",
-            "钟滔的新媒体运营作品集，聚焦内容、获客和转化，整理代表案例、个人经历与联系方式。",
+            "钟滔 | 新媒体运营案例集",
+            "钟滔的新媒体运营案例集，聚焦内容、获客和转化，整理代表案例、个人经历与联系方式。",
             "https://www.xn--8bx391f.com/",
             "website",
             "home-page",
@@ -1809,15 +1809,15 @@ def write_preview() -> None:
         </div>
       </header>
 
-      <section class="group" aria-label="作品集入口">
+      <section class="group" aria-label="案例集入口">
         <div class="group-head">
-          <h2>作品集入口</h2>
-          <p>后续集中建设作品、项目和素材的位置，当前先保留入口。</p>
+          <h2>案例集入口</h2>
+          <p>后续集中建设案例、项目和素材的位置，当前先保留入口。</p>
         </div>
         <div class="grid portfolio">
           <article class="card portfolio-card">
             <div class="media" aria-hidden="true"></div>
-            <div class="body"><div><h3>作品集</h3><p>这里先收纳已经梳理出来的账号作品，后续再继续补项目过程、素材和复盘。</p></div><a class="button" href="portfolio.html">进入作品集</a></div>
+            <div class="body"><div><h3>案例集</h3><p>这里先收纳已经梳理出来的账号案例，后续再继续补项目过程、素材和复盘。</p></div><a class="button" href="portfolio.html">进入案例集</a></div>
           </article>
         </div>
       </section>
@@ -1881,8 +1881,8 @@ def write_portfolio() -> None:
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>作品集账号归档 | 钟滔</title>
-    <meta name="description" content="钟滔作品集账号归档，整理太希智能、杭州言心和杭州梦璃科技相关账号入口。" />
+    <title>案例集账号归档 | 钟滔</title>
+    <meta name="description" content="钟滔案例集账号归档，整理太希智能、杭州言心和杭州梦璃科技相关账号入口。" />
     <meta name="robots" content="noindex,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
     <meta name="googlebot" content="noindex,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
     <link rel="canonical" href="https://www.xn--8bx391f.com/experiments/portfolio.html" />
@@ -2137,13 +2137,13 @@ def write_portfolio() -> None:
       <a class="top-link" href="minimal-modern-blue/index.html">返回个人站</a>
       <header>
         <div>
-          <h1>作品集账号归档</h1>
+          <h1>案例集账号归档</h1>
         </div>
         <figure class="portrait">
           <img src="../assets/brand/portrait-zt-square.webp" alt="钟滔头像" loading="eager" decoding="async" />
           <figcaption>
             <strong>钟滔</strong>
-            <span>新媒体运营作品集<br />账号入口归档</span>
+            <span>新媒体运营案例集<br />账号入口归档</span>
           </figcaption>
         </figure>
       </header>

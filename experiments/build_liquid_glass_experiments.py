@@ -254,7 +254,7 @@ def nav(prefix: str, current: str, home_page: bool = False) -> str:
           <span class="brand-mark">ZT</span>
           <span class="brand-copy">
             <strong>钟滔</strong>
-            <small>新媒体运营 / 作品集</small>
+            <small>新媒体运营 / 案例集</small>
           </span>
         </a>
 
@@ -280,7 +280,7 @@ def footer(prefix: str, toast: bool = False) -> str:
     return f"""    <footer class="site-footer" aria-label="页脚">
       <div class="shell footer-inner">
         <p>&copy; <span id="year">2025</span> 钟滔</p>
-        <p class="footer-note">新媒体运营 / 作品集</p>
+        <p class="footer-note">新媒体运营 / 案例集</p>
       </div>
     </footer>
 {toast_html}
@@ -321,7 +321,7 @@ PERSON_LD = {
     "alternateName": "Zhong Tao",
     "url": "https://www.xn--8bx391f.com/",
     "image": "https://www.xn--8bx391f.com/assets/brand/portrait-zt-square.webp",
-    "description": "钟滔的新媒体运营作品集，聚焦内容、获客和转化。",
+    "description": "钟滔的新媒体运营案例集，聚焦内容、获客和转化。",
     "jobTitle": "新媒体运营",
     "email": "mailto:2504308228@qq.com",
     "telephone": "+86-18707073956",
@@ -336,7 +336,7 @@ def home_main() -> str:
         <div class="hero-bg" aria-hidden="true"></div>
         <div class="shell hero-grid">
           <div class="hero-copy reveal-on-scroll">
-            <p class="eyebrow">新媒体运营 / 作品集</p>
+            <p class="eyebrow">新媒体运营 / 案例集</p>
             <h1>钟滔</h1>
             <p class="hero-line">内容、获客、转化</p>
             <p class="hero-summary">目前主要在新媒体领域，做内容传播、线索承接和转化复盘，也在尝试用 AI 工具把运营流程跑得更稳。</p>
@@ -2540,8 +2540,8 @@ def write_site(theme_key: str) -> None:
 
     (site_dir / "index.html").write_text(
         page(
-            "钟滔 | 新媒体运营作品集",
-            "钟滔的新媒体运营作品集，聚焦内容、获客和转化，整理代表案例、个人经历与联系方式。",
+            "钟滔 | 新媒体运营案例集",
+            "钟滔的新媒体运营案例集，聚焦内容、获客和转化，整理代表案例、个人经历与联系方式。",
             "https://www.xn--8bx391f.com/",
             "website",
             "home-page",

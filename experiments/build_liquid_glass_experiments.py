@@ -148,7 +148,7 @@ THEMES = {
 }
 
 CONTACT = {
-    "email": "2504308228@qq.com",
+    "email": "ZT3956@126.com",
     "phone": "18707073956",
     "region": "杭州 / 赣州",
 }
@@ -323,7 +323,7 @@ PERSON_LD = {
     "image": "https://www.xn--8bx391f.com/assets/brand/portrait-zt-square.webp",
     "description": "钟滔的新媒体运营案例集，聚焦内容、获客和转化。",
     "jobTitle": "新媒体运营",
-    "email": "mailto:2504308228@qq.com",
+    "email": "mailto:ZT3956@126.com",
     "telephone": "+86-18707073956",
     "knowsAbout": ["新媒体运营", "内容运营", "内容获客", "小红书 SEO", "抖音内容", "信息流", "科技产品传播", "AI 提效"],
     "homeLocation": {"@type": "Place", "name": "杭州"},

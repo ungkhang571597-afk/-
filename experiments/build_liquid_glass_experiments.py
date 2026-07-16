@@ -268,6 +268,7 @@ def nav(prefix: str, current: str, home_page: bool = False) -> str:
         <nav class="site-nav" id="site-nav" aria-label="主导航">
           <a href="{home_href}"{current_attr("home")}>首页</a>
           <a href="{cases_href}"{current_attr("cases")}>案例</a>
+          <a href="https://my.feishu.cn/wiki/NLwjw7TsIiR8ZZkBZDzcEUHdneh" target="_blank" rel="noopener noreferrer">飞书案例集</a>
           <a href="{prefix}about.html"{current_attr("about")}>关于</a>
           <a href="{prefix}contact.html"{current_attr("contact")}>联系</a>
         </nav>

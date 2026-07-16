@@ -57,6 +57,11 @@
         margin: 0 auto;
         padding: 54px 0 40px;
       }
+      .site-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
       .site-kicker {
         display: inline-flex;
         align-items: center;
@@ -287,7 +292,10 @@
   </head>
   <body>
     <main class="shell">
-      <a class="site-kicker" href="experiments/minimal-modern-blue/index.html">返回个人站</a>
+      <nav class="site-links" aria-label="案例集快捷入口">
+        <a class="site-kicker" href="experiments/minimal-modern-blue/index.html">返回个人站</a>
+        <a class="site-kicker" href="https://my.feishu.cn/wiki/NLwjw7TsIiR8ZZkBZDzcEUHdneh" target="_blank" rel="noopener noreferrer">飞书案例集</a>
+      </nav>
       <header>
         <div>
           <h1>案例集账号归档</h1>

@@ -1905,6 +1905,11 @@ def write_portfolio() -> None:
         margin: 0 auto;
         padding: 54px 0 68px;
       }
+      .top-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
       .top-link {
         display: inline-flex;
         align-items: center;
@@ -2134,7 +2139,10 @@ def write_portfolio() -> None:
   </head>
   <body>
     <main class="shell">
-      <a class="top-link" href="minimal-modern-blue/index.html">返回个人站</a>
+      <nav class="top-links" aria-label="案例集快捷入口">
+        <a class="top-link" href="minimal-modern-blue/index.html">返回个人站</a>
+        <a class="top-link" href="https://my.feishu.cn/wiki/NLwjw7TsIiR8ZZkBZDzcEUHdneh" target="_blank" rel="noopener noreferrer">飞书案例集</a>
+      </nav>
       <header>
         <div>
           <h1>案例集账号归档</h1>

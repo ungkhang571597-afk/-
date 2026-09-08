@@ -2237,7 +2237,7 @@ def write_portfolio() -> None:
           <div class="project-head">
             <span>03 / 餐饮培训</span>
             <h2>广州颜执餐饮企业管理有限公司</h2>
-            <p>在广州工作期间任职的餐饮培训公司，以下为相关小红书账号。</p>
+            <p>任职时间：2022年3月—2023年9月。以下为相关小红书账号。</p>
           </div>
           <div class="accounts">
             <div class="account">

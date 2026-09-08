@@ -2158,7 +2158,7 @@ def write_portfolio() -> None:
 
       <section class="summary" aria-label="账号归档概览">
         <article><strong>4</strong><span>项目 / 品牌</span></article>
-        <article><strong>13</strong><span>账号入口</span></article>
+        <article><strong>14</strong><span>账号入口</span></article>
         <article><strong>3</strong><span>主要平台</span></article>
       </section>
 
@@ -2264,6 +2264,11 @@ def write_portfolio() -> None:
               <span class="platform">小红书</span>
               <div><strong>王梦璃在美业</strong><small>美业 IP / 内容运营</small></div>
               <a class="open" href="https://www.xiaohongshu.com/user/profile/65e82628000000000500a346?xsec_token=ABeHYrAMs09yggeQ0EhsaYyEu-fV5i4iFQ5v2NknvYP8M%3D&amp;xsec_source=pc_search" target="_blank" rel="noopener noreferrer">打开账号</a>
+            </div>
+            <div class="account">
+              <span class="platform">小红书</span>
+              <div><strong>王梦璃</strong><small>美业 IP / 内容运营</small></div>
+              <a class="open" href="https://www.xiaohongshu.com/user/profile/645d1bca00000000120374fe?xsec_token=ABRxmShE4EW4r9nG8HlxqqabVLhJpWBe365u5eZnwFcf8%3D&amp;xsec_source=pc_search" target="_blank" rel="noopener noreferrer">打开账号</a>
             </div>
           </div>
         </article>

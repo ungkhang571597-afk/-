@@ -2157,8 +2157,8 @@ def write_portfolio() -> None:
       </header>
 
       <section class="summary" aria-label="账号归档概览">
-        <article><strong>3</strong><span>项目 / 品牌</span></article>
-        <article><strong>11</strong><span>账号入口</span></article>
+        <article><strong>4</strong><span>项目 / 品牌</span></article>
+        <article><strong>13</strong><span>账号入口</span></article>
         <article><strong>3</strong><span>主要平台</span></article>
       </section>
 
@@ -2235,7 +2235,27 @@ def write_portfolio() -> None:
 
         <article class="project">
           <div class="project-head">
-            <span>03 / 美业 IP 内容</span>
+            <span>03 / 餐饮培训</span>
+            <h2>广州颜执餐饮企业管理有限公司</h2>
+            <p>在广州工作期间任职的餐饮培训公司，以下为相关小红书账号。</p>
+          </div>
+          <div class="accounts">
+            <div class="account">
+              <span class="platform">小红书</span>
+              <div><strong>颜执泰式餐饮培训</strong><small>餐饮培训 / 小红书账号 1</small></div>
+              <a class="open" href="https://www.xiaohongshu.com/user/profile/5f2a7a960000000001008fba?xsec_token=ABE5jDBXzp4x6RcevhjZBkuS1zmBOsBkAXpanizduo7hg%3D&amp;xsec_source=pc_search" target="_blank" rel="noopener noreferrer">打开账号</a>
+            </div>
+            <div class="account">
+              <span class="platform">小红书</span>
+              <div><strong>颜执泰式餐饮培训</strong><small>餐饮培训 / 小红书账号 2</small></div>
+              <a class="open" href="https://www.xiaohongshu.com/user/profile/619781580000000010008f83?xsec_token=AB__qfNu3KYGGdszyU9ZwkCOU5QwO38gGOVut6E2zxxKw%3D&amp;xsec_source=pc_search" target="_blank" rel="noopener noreferrer">打开账号</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-head">
+            <span>04 / 美业 IP 内容</span>
             <h2>杭州梦璃科技</h2>
             <p>围绕美业 IP、内容表达和账号运营沉淀的账号入口。</p>
           </div>

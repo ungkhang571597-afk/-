@@ -2165,7 +2165,7 @@ def write_portfolio() -> None:
         <article class="project">
           <div class="project-head">
             <span>01 / 科技产品传播</span>
-            <h2>太希智能</h2>
+            <h2>杭州太希智能科技有限公司</h2>
           </div>
           <div class="accounts">
             <div class="account">
@@ -2194,7 +2194,7 @@ def write_portfolio() -> None:
         <article class="project">
           <div class="project-head">
             <span>02 / 同城教育获客</span>
-            <h2>杭州言心</h2>
+            <h2>杭州言心信息咨询有限公司</h2>
           </div>
           <div class="accounts">
             <div class="account">
@@ -2233,7 +2233,7 @@ def write_portfolio() -> None:
         <article class="project">
           <div class="project-head">
             <span>03 / 美业 IP 内容</span>
-            <h2>杭州梦璃科技</h2>
+            <h2>杭州王梦璃时代传媒有限公司</h2>
           </div>
           <div class="accounts">
             <div class="account">

@@ -2167,7 +2167,6 @@ def write_portfolio() -> None:
           <div class="project-head">
             <span>01 / 科技产品传播</span>
             <h2>太希智能</h2>
-            <p>围绕外骨骼机器人与科技产品传播沉淀的账号入口。</p>
           </div>
           <div class="accounts">
             <div class="account">
@@ -2197,7 +2196,6 @@ def write_portfolio() -> None:
           <div class="project-head">
             <span>02 / 同城教育获客</span>
             <h2>杭州言心</h2>
-            <p>围绕口才培训、本地教育和同城线索承接沉淀的账号入口。</p>
           </div>
           <div class="accounts">
             <div class="account">
@@ -2237,7 +2235,6 @@ def write_portfolio() -> None:
           <div class="project-head">
             <span>03 / 美业 IP 内容</span>
             <h2>杭州梦璃科技</h2>
-            <p>围绕美业 IP、内容表达和账号运营沉淀的账号入口。</p>
           </div>
           <div class="accounts">
             <div class="account">
@@ -2257,7 +2254,6 @@ def write_portfolio() -> None:
           <div class="project-head">
             <span>04 / 餐饮培训</span>
             <h2>广州颜执餐饮企业管理有限公司</h2>
-            <p>任职时间：2022年3月—2023年9月。以下为相关小红书账号。</p>
           </div>
           <div class="accounts">
             <div class="account">

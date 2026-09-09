@@ -1947,7 +1947,7 @@ def write_portfolio() -> None:
       .portrait {
         margin: 0;
         display: grid;
-        grid-template-columns: 66px minmax(0, 1fr);
+        grid-template-columns: minmax(0, 1fr);
         align-items: center;
         gap: 14px;
         padding: 12px 14px;
@@ -2120,7 +2120,7 @@ def write_portfolio() -> None:
         header { grid-template-columns: 1fr; }
         .portrait {
           width: min(100%, 320px);
-          grid-template-columns: 58px minmax(0, 1fr);
+          grid-template-columns: minmax(0, 1fr);
           align-self: start;
         }
         .portrait img {
@@ -2148,7 +2148,6 @@ def write_portfolio() -> None:
           <h1>案例集账号归档</h1>
         </div>
         <figure class="portrait">
-          <img src="../assets/brand/portrait-zt-square.webp" alt="钟滔头像" loading="eager" decoding="async" />
           <figcaption>
             <strong>钟滔</strong>
             <span>新媒体运营案例集<br />账号入口归档</span>

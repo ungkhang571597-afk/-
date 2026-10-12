@@ -1,0 +1,8 @@
+# Temporarily publish only the account archive and its assets.
+# Remove these exclusions to restore the preserved pages.
+exclude:
+  - about.html
+  - contact.html
+  - cases
+  - experiments
+  - "个人信息.txt"

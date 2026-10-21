@@ -2223,7 +2223,7 @@ def write_portfolio() -> None:
           <div class="accounts">
             <div class="account">
               <span class="platform">小红书</span>
-              <div><strong>王梦璃在美业</strong><small>美业 IP / 内容运营</small></div>
+              <div><strong>王梦璃同城获客</strong><small>美业 IP / 内容运营</small></div>
               <a class="open" href="https://www.xiaohongshu.com/user/profile/65e82628000000000500a346?xsec_token=ABeHYrAMs09yggeQ0EhsaYyEu-fV5i4iFQ5v2NknvYP8M%3D&amp;xsec_source=pc_search" target="_blank" rel="noopener noreferrer">打开账号</a>
             </div>
             <div class="account">

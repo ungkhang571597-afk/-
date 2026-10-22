@@ -98,4 +98,5 @@
   const fromHash = () => show(new URLSearchParams(location.hash.slice(1)).get('page'), false);
   window.addEventListener('hashchange', fromHash);
   fromHash();
+  [select, toggle, document.getElementById('zoom'), document.getElementById('fullscreen')].forEach((control) => { control.disabled = false; });
 })();

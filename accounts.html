@@ -39,257 +39,7 @@
         }
       }
     </script>
-    <style>
-      * { box-sizing: border-box; }
-      body {
-        margin: 0;
-        min-height: 100vh;
-        color: #201914;
-        font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
-        background:
-          linear-gradient(90deg, rgba(30, 24, 19, .05) 0 1px, transparent 1px) 0 0 / 72px 72px,
-          linear-gradient(0deg, rgba(30, 24, 19, .035) 0 1px, transparent 1px) 0 0 / 72px 72px,
-          #f4eee4;
-      }
-      a { color: inherit; text-decoration: none; }
-      .shell {
-        width: min(100% - 72px, 1180px);
-        margin: 0 auto;
-        padding: 54px 0 40px;
-      }
-      .site-links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-      .site-kicker {
-        display: inline-flex;
-        align-items: center;
-        min-height: 38px;
-        padding: 7px 10px;
-        border: 1px solid rgba(32, 25, 20, .16);
-        border-radius: 4px;
-        color: #6d5b4c;
-        background: rgba(255, 252, 245, .68);
-        font-size: 13px;
-      }
-      header {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(248px, 320px);
-        align-items: end;
-        gap: 28px;
-        margin-top: 34px;
-        padding-bottom: 32px;
-        border-bottom: 1px solid rgba(32, 25, 20, .14);
-      }
-      h1, h2, h3, p { margin: 0; }
-      h1 {
-        font-family: "Noto Serif SC", "Songti SC", serif;
-        font-size: clamp(46px, 8vw, 104px);
-        font-weight: 500;
-        line-height: 1.05;
-      }
-      .portrait {
-        margin: 0;
-        display: grid;
-        grid-template-columns: minmax(0, 1fr);
-        align-items: center;
-        gap: 14px;
-        padding: 12px 14px;
-        border: 1px solid rgba(32, 25, 20, .16);
-        border-radius: 6px;
-        background:
-          linear-gradient(135deg, rgba(255, 252, 245, .9), rgba(244, 238, 228, .72)),
-          linear-gradient(90deg, rgba(32, 25, 20, .05) 0 1px, transparent 1px) 0 0 / 24px 24px;
-        box-shadow: 0 18px 40px rgba(69, 50, 32, .08);
-      }
-      .portrait img {
-        display: block;
-        width: 66px;
-        height: 66px;
-        aspect-ratio: 1;
-        object-fit: cover;
-        object-position: center 36%;
-        border: 1px solid rgba(32, 25, 20, .18);
-        border-radius: 999px;
-        filter: saturate(.9) contrast(.98);
-      }
-      .portrait figcaption {
-        display: grid;
-        gap: 3px;
-        min-width: 0;
-      }
-      .portrait strong {
-        color: #201914;
-        font-family: "Noto Serif SC", "Songti SC", serif;
-        font-size: 20px;
-        font-weight: 500;
-        line-height: 1.15;
-      }
-      .portrait span {
-        color: #6f5f52;
-        font-size: 12px;
-        line-height: 1.55;
-      }
-      .summary {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 14px;
-        margin: 28px 0 34px;
-      }
-      .summary article,
-      .project {
-        border: 1px solid rgba(32, 25, 20, .13);
-        border-radius: 6px;
-        background: rgba(255, 252, 245, .82);
-        box-shadow: 0 22px 54px rgba(69, 50, 32, .08);
-      }
-      .summary article {
-        padding: 18px 20px;
-      }
-      .summary strong {
-        display: block;
-        font-family: "Noto Serif SC", "Songti SC", serif;
-        font-size: 30px;
-        font-weight: 500;
-        line-height: 1;
-      }
-      .summary span {
-        display: block;
-        margin-top: 8px;
-        color: #74665a;
-        font-size: 13px;
-      }
-      .projects {
-        display: grid;
-        gap: 18px;
-      }
-      .project {
-        display: grid;
-        grid-template-columns: minmax(220px, .34fr) minmax(0, 1fr);
-        overflow: hidden;
-      }
-      .project-head {
-        min-height: 100%;
-        padding: 28px;
-        border-right: 1px solid rgba(32, 25, 20, .1);
-        background:
-          linear-gradient(135deg, rgba(32, 25, 20, .82), rgba(32, 25, 20, .28)),
-          linear-gradient(90deg, rgba(255, 252, 245, .16) 0 1px, transparent 1px) 0 0 / 26px 26px,
-          linear-gradient(0deg, rgba(255, 252, 245, .1) 0 1px, transparent 1px) 0 0 / 26px 26px;
-        color: #fffaf1;
-      }
-      .project-head span {
-        color: rgba(255, 250, 241, .68);
-        font-size: 13px;
-      }
-      .project-head h2 {
-        margin-top: 14px;
-        font-family: "Noto Serif SC", "Songti SC", serif;
-        font-size: 34px;
-        font-weight: 500;
-        line-height: 1.16;
-      }
-      .project-head p {
-        margin-top: 16px;
-        color: rgba(255, 250, 241, .72);
-        font-size: 14px;
-        line-height: 1.72;
-      }
-      .accounts {
-        display: grid;
-        gap: 0;
-        padding: 0 28px;
-      }
-      .account {
-        display: grid;
-        grid-template-columns: 112px minmax(0, 1fr) auto;
-        align-items: center;
-        gap: 18px;
-        min-height: 94px;
-        padding: 18px 0;
-        border-top: 1px solid rgba(32, 25, 20, .1);
-      }
-      .account:first-child { border-top: 0; }
-      .platform {
-        width: fit-content;
-        padding: 5px 9px;
-        border: 1px solid rgba(32, 25, 20, .16);
-        border-radius: 4px;
-        color: #6d5b4c;
-        background: rgba(244, 238, 228, .72);
-        font-size: 13px;
-      }
-      .account strong {
-        display: block;
-        color: #201914;
-        font-size: 18px;
-        font-weight: 600;
-        line-height: 1.35;
-      }
-      .account small {
-        display: block;
-        margin-top: 4px;
-        color: #76675a;
-        font-size: 13px;
-        line-height: 1.5;
-      }
-      .open {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 40px;
-        padding: 8px 12px;
-        border: 1px solid #211914;
-        border-radius: 4px;
-        color: #fffaf1;
-        background: #211914;
-        font-size: 13px;
-        white-space: nowrap;
-      }
-      .search-note {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 40px;
-        padding: 8px 12px;
-        border: 1px solid rgba(32, 25, 20, .18);
-        border-radius: 4px;
-        color: #6d5b4c;
-        background: rgba(244, 238, 228, .76);
-        font-size: 13px;
-        white-space: nowrap;
-      }
-      .site-footer {
-        width: min(100% - 72px, 1180px);
-        margin: 0 auto;
-        padding: 0 0 54px;
-        color: #74665a;
-        font-size: 13px;
-      }
-      @media (max-width: 840px) {
-        .shell { width: min(100% - 32px, 1180px); padding-top: 38px; }
-        header { grid-template-columns: 1fr; }
-        .portrait {
-          width: min(100%, 320px);
-          grid-template-columns: minmax(0, 1fr);
-          align-self: start;
-        }
-        .portrait img {
-          width: 58px;
-          height: 58px;
-        }
-        .summary { grid-template-columns: 1fr; }
-        .project { grid-template-columns: 1fr; }
-        .project-head { border-right: 0; border-bottom: 1px solid rgba(32, 25, 20, .1); }
-        .accounts { padding: 0 20px; }
-        .account { grid-template-columns: 1fr; gap: 10px; align-items: start; }
-        .open,
-        .search-note { width: fit-content; }
-        .site-footer { width: min(100% - 32px, 1180px); }
-      }
-    </style>
-    <link rel="stylesheet" href="assets/archive.css" />
+    <link rel="stylesheet" href="assets/archive.css?v=compact-20261022" />
   </head>
   <body>
     <main class="shell">
@@ -297,23 +47,10 @@
         <a class="back-link" href="index.html"><img class="icon" src="assets/ui/arrow-left.svg" alt="" />首页</a>
         <a class="back-link" href="portfolio.html">查看作品集<img class="icon" src="assets/ui/arrow-up-right.svg" alt="" /></a>
       </nav>
-      <header>
-        <div>
-          <h1>历史账号归档</h1>
-        </div>
-        <figure class="portrait">
-          <figcaption>
-            <strong>钟滔</strong>
-            <span>新媒体运营案例集<br />账号入口归档</span>
-          </figcaption>
-        </figure>
+      <header class="archive-heading">
+        <h1>历史账号</h1>
+        <p>4 个项目 · 17 个入口</p>
       </header>
-
-      <section class="summary" aria-label="账号归档概览">
-        <article><strong>4</strong><span>项目 / 品牌</span></article>
-        <article><strong>17</strong><span>账号入口</span></article>
-        <article><strong>3</strong><span>主要平台</span></article>
-      </section>
 
       <section class="projects" aria-label="账号列表">
         <article class="project">
@@ -325,12 +62,12 @@
             <div class="account">
               <span class="platform">抖音</span>
               <div><strong>太希智行外骨骼官方号</strong><small>科技产品传播 / 外骨骼机器人</small></div>
-              <a class="open" href="https://www.douyin.com/user/MS4wLjABAAAAbudLV8XIBBPDe75KXmXyMX6e8sbgEk7iuypt90v-2MA?from_tab_name=main" target="_blank" rel="noopener noreferrer">打开账号</a>
+              <a class="open" aria-label="打开太希智行外骨骼官方号" title="打开太希智行外骨骼官方号" href="https://www.douyin.com/user/MS4wLjABAAAAbudLV8XIBBPDe75KXmXyMX6e8sbgEk7iuypt90v-2MA?from_tab_name=main" target="_blank" rel="noopener noreferrer">打开账号</a>
             </div>
             <div class="account">
               <span class="platform">小红书</span>
               <div><strong>杭州太希智能科技</strong><small>科技产品传播 / 内容矩阵</small></div>
-              <a class="open" href="https://www.xiaohongshu.com/user/profile/65b0c35c000000000d03fa49?xsec_token=ABkU6LkemMfs4mOXAqShXC-Ubr9b0d-tpgHBJuvpBOopI%3D&amp;xsec_source=pc_search" target="_blank" rel="noopener noreferrer">打开账号</a>
+              <a class="open" aria-label="打开杭州太希智能科技" title="打开杭州太希智能科技" href="https://www.xiaohongshu.com/user/profile/65b0c35c000000000d03fa49?xsec_token=ABkU6LkemMfs4mOXAqShXC-Ubr9b0d-tpgHBJuvpBOopI%3D&amp;xsec_source=pc_search" target="_blank" rel="noopener noreferrer">打开账号</a>
             </div>
             <div class="account">
               <span class="platform">微信</span>
@@ -340,7 +77,7 @@
             <div class="account">
               <span class="platform">抖音</span>
               <div><strong>广交会外骨骼搜索结果</strong><small>抖音搜索结果 / 传播延展</small></div>
-              <a class="open" href="https://www.douyin.com/jingxuan/search/%E5%B9%BF%E4%BA%A4%E4%BC%9A%E5%A4%96%E9%AA%A8%E9%AA%BC?aid=c965de21-5225-40a0-b57e-989575e98d36&amp;type=general" target="_blank" rel="noopener noreferrer">查看结果</a>
+              <a class="open" aria-label="查看广交会外骨骼搜索结果" title="查看广交会外骨骼搜索结果" href="https://www.douyin.com/jingxuan/search/%E5%B9%BF%E4%BA%A4%E4%BC%9A%E5%A4%96%E9%AA%A8%E9%AA%BC?aid=c965de21-5225-40a0-b57e-989575e98d36&amp;type=general" target="_blank" rel="noopener noreferrer">查看结果</a>
             </div>
           </div>
         </article>
@@ -354,17 +91,17 @@
             <div class="account">
               <span class="platform">抖音</span>
               <div><strong>言心口才培训</strong><small>口才培训 / 同城获客</small></div>
-              <a class="open" href="https://www.douyin.com/user/MS4wLjABAAAAjr1EmrrfY44sXZkiAAqYjRcID4QGRPZAGPuHh6GwLE3tqTWj84CF8r00VW1ru27e?from_tab_name=main" target="_blank" rel="noopener noreferrer">打开账号</a>
+              <a class="open" aria-label="打开言心口才培训" title="打开言心口才培训" href="https://www.douyin.com/user/MS4wLjABAAAAjr1EmrrfY44sXZkiAAqYjRcID4QGRPZAGPuHh6GwLE3tqTWj84CF8r00VW1ru27e?from_tab_name=main" target="_blank" rel="noopener noreferrer">打开账号</a>
             </div>
             <div class="account">
               <span class="platform">小红书</span>
               <div><strong>跟言心-韩老师学口才</strong><small>表达训练 / 小红书搜索</small></div>
-              <a class="open" href="https://www.xiaohongshu.com/user/profile/6725f78b000000001d02e3eb?xsec_token=ABR2EIWyGZUSOlQdHloOq60ohO76NT8TdFVMNPl0yidhE%3D&amp;xsec_source=pc_search" target="_blank" rel="noopener noreferrer">打开账号</a>
+              <a class="open" aria-label="打开跟言心-韩老师学口才" title="打开跟言心-韩老师学口才" href="https://www.xiaohongshu.com/user/profile/6725f78b000000001d02e3eb?xsec_token=ABR2EIWyGZUSOlQdHloOq60ohO76NT8TdFVMNPl0yidhE%3D&amp;xsec_source=pc_search" target="_blank" rel="noopener noreferrer">打开账号</a>
             </div>
             <div class="account">
               <span class="platform">小红书</span>
               <div><strong>杭州口才老师-阿楠</strong><small>杭州口才 / 本地线索</small></div>
-              <a class="open" href="https://www.xiaohongshu.com/user/profile/689beb42000000001900c55a?xsec_token=AB_2gILMGjiVHUWflGTcrFefhQar3nZTxeFMuuHyqlsNo%3D&amp;xsec_source=pc_search" target="_blank" rel="noopener noreferrer">打开账号</a>
+              <a class="open" aria-label="打开杭州口才老师-阿楠" title="打开杭州口才老师-阿楠" href="https://www.xiaohongshu.com/user/profile/689beb42000000001900c55a?xsec_token=AB_2gILMGjiVHUWflGTcrFefhQar3nZTxeFMuuHyqlsNo%3D&amp;xsec_source=pc_search" target="_blank" rel="noopener noreferrer">打开账号</a>
             </div>
           </div>
         </article>
@@ -378,32 +115,32 @@
             <div class="account">
               <span class="platform">小红书</span>
               <div><strong>王梦璃同城获客</strong><small>美业 IP / 内容运营</small></div>
-              <a class="open" href="https://www.xiaohongshu.com/user/profile/65e82628000000000500a346?xsec_token=ABeHYrAMs09yggeQ0EhsaYyEu-fV5i4iFQ5v2NknvYP8M%3D&amp;xsec_source=pc_search" target="_blank" rel="noopener noreferrer">打开账号</a>
+              <a class="open" aria-label="打开王梦璃同城获客" title="打开王梦璃同城获客" href="https://www.xiaohongshu.com/user/profile/65e82628000000000500a346?xsec_token=ABeHYrAMs09yggeQ0EhsaYyEu-fV5i4iFQ5v2NknvYP8M%3D&amp;xsec_source=pc_search" target="_blank" rel="noopener noreferrer">打开账号</a>
             </div>
             <div class="account">
               <span class="platform">小红书</span>
               <div><strong>王梦璃</strong><small>美业 IP / 内容运营</small></div>
-              <a class="open" href="https://www.xiaohongshu.com/user/profile/645d1bca00000000120374fe?xsec_token=ABRxmShE4EW4r9nG8HlxqqabVLhJpWBe365u5eZnwFcf8%3D&amp;xsec_source=pc_search" target="_blank" rel="noopener noreferrer">打开账号</a>
+              <a class="open" aria-label="打开王梦璃" title="打开王梦璃" href="https://www.xiaohongshu.com/user/profile/645d1bca00000000120374fe?xsec_token=ABRxmShE4EW4r9nG8HlxqqabVLhJpWBe365u5eZnwFcf8%3D&amp;xsec_source=pc_search" target="_blank" rel="noopener noreferrer">打开账号</a>
             </div>
             <div class="account">
               <span class="platform">小红书</span>
               <div><strong>王梦丽说同城</strong><small>美业 IP / 内容运营</small></div>
-              <a class="open" href="https://www.xiaohongshu.com/user/profile/64c073120000000025034d98?xsec_token=ABh1uAZAmwBeDKn4fYJ4w8bzMWju3O2PShEzJBcY5C7FI%3D&amp;xsec_source=pc_search" target="_blank" rel="noopener noreferrer">打开账号</a>
+              <a class="open" aria-label="打开王梦丽说同城" title="打开王梦丽说同城" href="https://www.xiaohongshu.com/user/profile/64c073120000000025034d98?xsec_token=ABh1uAZAmwBeDKn4fYJ4w8bzMWju3O2PShEzJBcY5C7FI%3D&amp;xsec_source=pc_search" target="_blank" rel="noopener noreferrer">打开账号</a>
             </div>
             <div class="account">
               <span class="platform">小红书</span>
               <div><strong>王梦丽说美业IP</strong><small>美业 IP / 内容运营</small></div>
-              <a class="open" href="https://www.xiaohongshu.com/user/profile/6631c11a000000000b030afa?xsec_token=ABPqCAOcoi-_KRDO5QoGe46wj5HUN9G2IrXZJKI7bbbOM%3D&amp;xsec_source=pc_search" target="_blank" rel="noopener noreferrer">打开账号</a>
+              <a class="open" aria-label="打开王梦丽说美业IP" title="打开王梦丽说美业IP" href="https://www.xiaohongshu.com/user/profile/6631c11a000000000b030afa?xsec_token=ABPqCAOcoi-_KRDO5QoGe46wj5HUN9G2IrXZJKI7bbbOM%3D&amp;xsec_source=pc_search" target="_blank" rel="noopener noreferrer">打开账号</a>
             </div>
             <div class="account">
               <span class="platform">小红书</span>
               <div><strong>王梦璃说纹绣IP</strong><small>美业 IP / 内容运营</small></div>
-              <a class="open" href="https://www.xiaohongshu.com/user/profile/65f26d430000000005009252?xsec_token=ABJDvUwCe1NrhOskU7Pudv_z0xkthTzmAtM8gP1-IHwmo%3D&amp;xsec_source=pc_search" target="_blank" rel="noopener noreferrer">打开账号</a>
+              <a class="open" aria-label="打开王梦璃说纹绣IP" title="打开王梦璃说纹绣IP" href="https://www.xiaohongshu.com/user/profile/65f26d430000000005009252?xsec_token=ABJDvUwCe1NrhOskU7Pudv_z0xkthTzmAtM8gP1-IHwmo%3D&amp;xsec_source=pc_search" target="_blank" rel="noopener noreferrer">打开账号</a>
             </div>
             <div class="account">
               <span class="platform">小红书</span>
               <div><strong>王梦璃(美业ip)</strong><small>美业 IP / 内容运营</small></div>
-              <a class="open" href="https://www.xiaohongshu.com/user/profile/6718e215000000000d024323?xsec_token=ABNlUlRfl9o_YGlAAcdRBLNvjLzGaHUhOIq98Ss186mbw%3D&amp;xsec_source=pc_search" target="_blank" rel="noopener noreferrer">打开账号</a>
+              <a class="open" aria-label="打开王梦璃(美业ip)" title="打开王梦璃(美业ip)" href="https://www.xiaohongshu.com/user/profile/6718e215000000000d024323?xsec_token=ABNlUlRfl9o_YGlAAcdRBLNvjLzGaHUhOIq98Ss186mbw%3D&amp;xsec_source=pc_search" target="_blank" rel="noopener noreferrer">打开账号</a>
             </div>
           </div>
         </article>
@@ -417,22 +154,22 @@
             <div class="account">
               <span class="platform">小红书</span>
               <div><strong>颜执餐饮美学培训</strong><small>餐饮培训 / 小红书账号 1</small></div>
-              <a class="open" href="https://www.xiaohongshu.com/user/profile/5f2a7a960000000001008fba?xsec_token=ABE5jDBXzp4x6RcevhjZBkuS1zmBOsBkAXpanizduo7hg%3D&amp;xsec_source=pc_search" target="_blank" rel="noopener noreferrer">打开账号</a>
+              <a class="open" aria-label="打开颜执餐饮美学培训" title="打开颜执餐饮美学培训" href="https://www.xiaohongshu.com/user/profile/5f2a7a960000000001008fba?xsec_token=ABE5jDBXzp4x6RcevhjZBkuS1zmBOsBkAXpanizduo7hg%3D&amp;xsec_source=pc_search" target="_blank" rel="noopener noreferrer">打开账号</a>
             </div>
             <div class="account">
               <span class="platform">小红书</span>
               <div><strong>颜执泰式餐饮培训</strong><small>餐饮培训 / 小红书账号 2</small></div>
-              <a class="open" href="https://www.xiaohongshu.com/user/profile/619781580000000010008f83?xsec_token=AB__qfNu3KYGGdszyU9ZwkCOU5QwO38gGOVut6E2zxxKw%3D&amp;xsec_source=pc_search" target="_blank" rel="noopener noreferrer">打开账号</a>
+              <a class="open" aria-label="打开颜执泰式餐饮培训" title="打开颜执泰式餐饮培训" href="https://www.xiaohongshu.com/user/profile/619781580000000010008f83?xsec_token=AB__qfNu3KYGGdszyU9ZwkCOU5QwO38gGOVut6E2zxxKw%3D&amp;xsec_source=pc_search" target="_blank" rel="noopener noreferrer">打开账号</a>
             </div>
             <div class="account">
               <span class="platform">抖音</span>
               <div><strong>颜执泰餐培训</strong><small>餐饮培训 / 抖音账号</small></div>
-              <a class="open" href="https://www.douyin.com/user/MS4wLjABAAAAOhpMBzhF1h0-0TVEgjcOsetQCVanAO8TKLL9ma-Pzqng3IS9Z_aoh3BGB6bqFfjC?from_tab_name=main" target="_blank" rel="noopener noreferrer">打开账号</a>
+              <a class="open" aria-label="打开颜执泰餐培训" title="打开颜执泰餐培训" href="https://www.douyin.com/user/MS4wLjABAAAAOhpMBzhF1h0-0TVEgjcOsetQCVanAO8TKLL9ma-Pzqng3IS9Z_aoh3BGB6bqFfjC?from_tab_name=main" target="_blank" rel="noopener noreferrer">打开账号</a>
             </div>
             <div class="account">
               <span class="platform">抖音</span>
               <div><strong>颜执餐饮美学培训</strong><small>餐饮培训 / 抖音账号</small></div>
-              <a class="open" href="https://www.douyin.com/user/MS4wLjABAAAA_A-tDMb3eMMVV3izR5MKIq2UZ9utf8QMSM84vCFngFY?from_tab_name=main" target="_blank" rel="noopener noreferrer">打开账号</a>
+              <a class="open" aria-label="打开颜执餐饮美学培训" title="打开颜执餐饮美学培训" href="https://www.douyin.com/user/MS4wLjABAAAA_A-tDMb3eMMVV3izR5MKIq2UZ9utf8QMSM84vCFngFY?from_tab_name=main" target="_blank" rel="noopener noreferrer">打开账号</a>
             </div>
           </div>
         </article>

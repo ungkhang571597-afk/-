@@ -2141,7 +2141,6 @@ def write_portfolio() -> None:
     <main class="shell">
       <nav class="top-links" aria-label="案例集快捷入口">
         <a class="top-link" href="minimal-modern-blue/index.html">返回个人站</a>
-        <a class="top-link" href="https://my.feishu.cn/wiki/NLwjw7TsIiR8ZZkBZDzcEUHdneh" target="_blank" rel="noopener noreferrer">飞书案例集</a>
       </nav>
       <header>
         <div>

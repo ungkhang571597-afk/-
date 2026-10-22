@@ -13,13 +13,13 @@
 .project-head h2 { order: -1; flex: 1; min-width: 0; margin: 0; font-size: 16px; font-weight: 500; line-height: 1.6; overflow-wrap: anywhere; }
 .project-head > span { font-size: 11px; line-height: 1.5; color: var(--muted); }
 .accounts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 28px; }
-.account { position: relative; min-width: 0; display: grid; grid-template-columns: 44px minmax(0, 1fr) 44px; align-items: center; gap: 10px; min-height: 64px; padding: 8px 6px; border-bottom: 1px solid #e8edea; }
+.account { position: relative; min-width: 0; display: grid; grid-template-columns: 44px minmax(0, 1fr) 64px; align-items: center; gap: 10px; min-height: 64px; padding: 8px 6px; border-bottom: 1px solid #e8edea; }
 .account > div { min-width: 0; }
 .account strong { display: block; font-size: 14px; font-weight: 500; line-height: 1.6; overflow-wrap: anywhere; }
 .account small { display: block; margin-top: 2px; color: var(--muted); font-size: 11px; line-height: 1.5; overflow-wrap: anywhere; }
 .platform { color: #5c6a63; font-size: 11px; line-height: 1.5; }
-.open { display: grid; place-items: center; width: 44px; height: 44px; font-size: 0; border-radius: 4px; }
-.open::before { content: ''; display: block; width: 18px; height: 18px; background: url('ui/arrow-up-right.svg') center / 18px no-repeat; }
+.open { display: inline-flex; align-items: center; justify-content: center; gap: 4px; justify-self: end; width: 64px; height: 44px; color: var(--accent); background: #edf3ef; border: 1px solid #dce6df; border-radius: 4px; font-size: 12px; line-height: 1; white-space: nowrap; }
+.open::before { content: ''; order: 1; display: block; width: 14px; height: 14px; background: url('ui/arrow-up-right.svg') center / 14px no-repeat; }
 /* Extend each account link to its complete row without nesting links. */
 .open::after { content: ''; position: absolute; inset: 0; border-radius: 4px; }
 .account:has(.open):hover { background: #edf3ef; }
@@ -30,13 +30,13 @@
   .accounts { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 600px) {
-  .shell { width: calc(100% - 32px); padding-top: 4px; }
+  .shell { width: calc(100% - 24px); padding-top: 4px; }
   .archive-heading { margin: 8px 0 16px; gap: 8px 12px; }
   .archive-heading h1 { font-size: 20px; }
   .projects { gap: 22px; }
   .project-head > span { display: none; }
   .project-head h2 { font-size: 15px; }
-  .account { min-height: 76px; grid-template-columns: 40px minmax(0, 1fr) 44px; gap: 8px; padding-inline: 2px; }
+  .account { min-height: 76px; grid-template-columns: 40px minmax(0, 1fr) 64px; gap: 8px; padding-inline: 2px; }
   .account strong { font-size: 14px; }
 }
 @media (max-height: 420px) and (min-width: 600px) {

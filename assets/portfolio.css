@@ -1,0 +1,22 @@
+@import url('portal.css?v=compact-20261022');
+
+.viewer { background: #eef2f0; }
+.viewer-toolbar { background: #f8faf9; }
+.toolbar-inner { width: min(1120px, calc(100% - 32px)); min-height: 56px; gap: 12px; padding-block: 0; flex-wrap: nowrap; }
+.viewer-title { font-size: 16px; margin-left: 0; }
+.viewer .icon-button { width: 44px; height: 44px; }
+.page-select { min-height: 36px; width: 84px; }
+.document-pages { width: min(1120px, calc(100% - 32px)); margin: 16px auto 28px; display: grid; gap: 12px; }
+.document-page { min-width: 0; margin: 0; scroll-margin-top: 72px; }
+.document-page > img { display: block; width: 100%; height: auto; aspect-ratio: 16/9; background: white; border: 1px solid #dde4df; }
+.document-page figcaption { padding: 4px 2px 0; color: #748078; font: 500 10px/1.5 'JetBrains Mono', monospace; text-align: right; }
+.page-error { margin: 4px 0; color: #9d3434; font-size: 12px; }
+@media (max-width: 760px) {
+  .toolbar-inner { width: calc(100% - 16px); min-height: 52px; gap: 8px; }
+  .toolbar-inner > .back-link { width: auto; gap: 4px; font-size: 12px; }
+  .toolbar-inner > .back-link .icon { width: 16px; height: 16px; }
+  .viewer-title { font-size: 15px; }
+  .page-select { width: 74px; }
+  .document-pages { width: calc(100% - 16px); margin-top: 10px; gap: 8px; }
+  .document-page { scroll-margin-top: 62px; }
+}

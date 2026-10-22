@@ -4,9 +4,10 @@ The live GitHub Pages site uses these root pages:
 
 - `index.html`: the minimal portal with two destinations.
 - `accounts.html`: the historical account archive (currently 17 entries).
-- `portfolio.html`: a 20-page viewer of the user-supplied PowerPoint export.
+- `portfolio.html`: a continuous vertical reader of the 20-page PowerPoint export.
 
-`assets/portal.css` styles the portal and viewer. `assets/archive.css` adapts
+`assets/portal.css` provides the shared styles. `assets/portfolio.css` styles
+the continuous reader. `assets/archive.css` adapts
 the preserved account archive to the same palette. Lucide SVG icons are in
 `assets/ui/` (lucide-static 0.468.0, ISC license).
 

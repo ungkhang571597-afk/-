@@ -1,4 +1,4 @@
-# Temporarily publish only the account archive and its assets.
+# Publish the portal, account archive, portfolio viewer and their assets.
 # Remove these exclusions to restore the preserved pages.
 exclude:
   - about.html

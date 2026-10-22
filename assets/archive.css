@@ -1,0 +1,20 @@
+@import url('portal.css');
+body { background: #f8faf9; color: #182522; }
+.archive-nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; border-bottom: 1px solid #dce3df; padding-bottom: 18px; }
+header { margin-top: 40px; border-bottom-color: #dce3df; }
+h1 { font-size: 52px; line-height: 1.3; }
+.portrait { background: transparent; box-shadow: none; border: 0; padding: 0; }
+.portrait strong { color: #182522; }
+.portrait span, .summary span, .account small { color: #69746f; }
+.summary { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.summary article { background: transparent; border: 0; border-radius: 0; border-bottom: 1px solid #dce3df; box-shadow: none; padding: 18px 0; }
+.project { background: white; box-shadow: none; border-color: #dce3df; border-radius: 4px; }
+.project-head { background: #edf2ef; border-color: #dce3df; color: #182522; }
+.project-head span { color: #69746f; }
+.project-head h2 { font-size: 30px; line-height: 1.5; overflow-wrap: anywhere; }
+.account { border-color: #e4e9e6; }
+.platform { border: 0; background: #edf2ef; color: #52665c; padding: 5px 8px; }
+.open { color: white; background: #28634f; border-color: #28634f; border-radius: 4px; }
+.open:hover { background: #1d4d3c; }
+.search-note { color: #52665c; background: #f3f6f4; border-color: #dce3df; }
+@media (max-width: 840px) { h1 { font-size: 34px; } .project-head h2 { font-size: 26px; } .project-head { padding: 24px 20px; } .portrait { display: none; } }

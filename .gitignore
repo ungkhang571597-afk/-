@@ -2,6 +2,7 @@ backups/
 output/
 test-results/
 .playwright-mcp/
+.playwright-cli/
 *-local-v*.png
 *-preview-current.png
 audit-*.png

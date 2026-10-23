@@ -4,16 +4,18 @@ The live GitHub Pages site uses these root pages:
 
 - `index.html`: the minimal portal with two destinations.
 - `accounts.html`: the historical account archive (currently 17 entries).
-- `portfolio.html`: a continuous vertical reader of the 20-page PowerPoint export.
+- `portfolio.html`: a continuous vertical reader of the 25-page PDF supplied on 2026-10-23.
 
 `assets/portal.css` provides the shared styles. `assets/portfolio.css` styles
 the continuous reader. `assets/archive.css` adapts
 the preserved account archive to the same palette. Lucide SVG icons are in
 `assets/ui/` (lucide-static 0.468.0, ISC license).
 
-The original PPTX was read-only exported through PowerPoint. The source file
-was not changed. `assets/portfolio/` contains the PDF and WebP slide exports.
-Do not overwrite these with a regenerated presentation.
+The current public portfolio uses `assets/portfolio/20261023/`: a byte-for-byte
+copy of the user-supplied PDF and its 25 WebP page renders. The PDF was rendered
+with Poppler at 1920 x 1080 and converted to WebP at quality 90. Page links and
+the download link must point to the same version. Source PDF/PPTX files are
+not edited. Older exports are preserved in `assets/portfolio/` for recovery.
 
 Future account changes belong in `accounts.html`. Keep the preserved
 `experiments/portfolio.html` and `write_portfolio()` in

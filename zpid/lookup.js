@@ -15,7 +15,7 @@
     const zpid = input.value.trim();
     if (!/^[0-9]{1,20}$/.test(zpid) || !/[1-9]/.test(zpid)) {
       input.setAttribute('aria-invalid', 'true');
-      error.textContent = zpid ? 'Enter a valid ZPID using digits only.' : 'Enter a Zillow Property ID.';
+      error.textContent = zpid ? '请输入有效的房源编号（仅限数字）。' : '请输入房源编号（ZPID）。';
       input.focus();
       return;
     }

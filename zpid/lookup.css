@@ -23,7 +23,7 @@ body {
 
 .lookup-form {
   display: grid;
-  grid-template-areas: "label label" "input action" "error error";
+  grid-template-areas: "label label" "input actions" "error error";
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 8px 12px;
 }
@@ -51,27 +51,47 @@ body {
 .lookup-form input::placeholder { color: #65746c; opacity: 1; }
 .lookup-form input[aria-invalid="true"] { border-color: var(--error); }
 
+.lookup-actions {
+  grid-area: actions;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 8px;
+}
+
 .lookup-form button {
-  grid-area: action;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 8px 16px;
-  border-color: var(--accent);
-  background: var(--accent);
-  color: #fff;
+  min-inline-size: 0;
+  padding: 8px 12px;
   font-weight: 600;
   cursor: pointer;
 }
 
-.lookup-form button:hover:not(:disabled) { background: #1f4e3f; }
+.lookup-paste {
+  border-color: #7b8d85;
+  background: #fff;
+  color: var(--ink);
+}
+
+.lookup-submit {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+.lookup-paste:hover:not(:disabled) { background: #eaf1ed; }
+.lookup-submit:hover:not(:disabled) { background: #1f4e3f; }
 .lookup-form button:disabled { opacity: .65; cursor: default; }
-.lookup-form button img { flex: none; filter: invert(1); }
+.lookup-form button img { flex: none; }
+.lookup-submit img { filter: invert(1); }
 .lookup-form :is(input, button):focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 .lookup-error { grid-area: error; min-block-size: 1.5em; margin: 0; color: var(--error); font-size: 14px; }
 
-@media (max-width: 420px) {
+@media (max-width: 520px) {
   .lookup h1 { font-size: 24px; }
-  .lookup-form { grid-template-areas: "label" "input" "action" "error"; grid-template-columns: minmax(0, 1fr); }
+  .lookup-form { grid-template-areas: "label" "input" "actions" "error"; grid-template-columns: minmax(0, 1fr); }
+  .lookup-actions { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); }
+  .lookup-form button { gap: 6px; padding-inline: 8px; }
 }

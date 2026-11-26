@@ -1,0 +1,77 @@
+:root {
+  color-scheme: light;
+  --paper: #f8faf9;
+  --ink: #182522;
+  --accent: #28634f;
+  --error: #a12f28;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-block-size: 100vh;
+  min-block-size: 100svh;
+  padding: clamp(36px, 18vh, 160px) 20px 32px;
+  background: var(--paper);
+  color: var(--ink);
+  font: 16px/1.5 system-ui, sans-serif;
+}
+
+.lookup { max-inline-size: 500px; margin-inline: auto; }
+.lookup h1 { margin: 0 0 24px; font-size: 28px; font-weight: 650; line-height: 1.2; }
+
+.lookup-form {
+  display: grid;
+  grid-template-areas: "label label" "input action" "error error";
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px 12px;
+}
+
+.lookup-form label { grid-area: label; font-size: 14px; font-weight: 600; }
+
+.lookup-form input,
+.lookup-form button {
+  min-block-size: 48px;
+  border: 1px solid;
+  border-radius: 6px;
+  font: inherit;
+}
+
+.lookup-form input {
+  grid-area: input;
+  min-inline-size: 0;
+  padding: 8px 12px;
+  background: #fff;
+  border-color: #7b8d85;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.lookup-form input::placeholder { color: #65746c; opacity: 1; }
+.lookup-form input[aria-invalid="true"] { border-color: var(--error); }
+
+.lookup-form button {
+  grid-area: action;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.lookup-form button:hover:not(:disabled) { background: #1f4e3f; }
+.lookup-form button:disabled { opacity: .65; cursor: default; }
+.lookup-form button img { flex: none; filter: invert(1); }
+.lookup-form :is(input, button):focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.lookup-error { grid-area: error; min-block-size: 1.5em; margin: 0; color: var(--error); font-size: 14px; }
+
+@media (max-width: 420px) {
+  .lookup h1 { font-size: 24px; }
+  .lookup-form { grid-template-areas: "label" "input" "action" "error"; grid-template-columns: minmax(0, 1fr); }
+}

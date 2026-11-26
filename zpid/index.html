@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="referrer" content="no-referrer" />
+  <meta name="theme-color" content="#f8faf9" />
+  <title>Zillow Property Lookup</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="lookup.css" />
+  <script src="lookup.js" defer></script>
+</head>
+<body>
+  <main class="lookup">
+    <h1>Zillow Property Lookup</h1>
+    <form class="lookup-form" id="property-lookup" novalidate>
+      <label for="zpid">Zillow Property ID (ZPID)</label>
+      <input id="zpid" type="text" inputmode="numeric" enterkeyhint="go" autocomplete="off" spellcheck="false" aria-describedby="zpid-error" placeholder="e.g. 458238121" required />
+      <button type="submit" disabled>
+        Open in Zillow
+        <img src="../assets/ui/arrow-up-right.svg" alt="" width="18" height="18" />
+      </button>
+      <p class="lookup-error" id="zpid-error" role="alert"></p>
+    </form>
+    <noscript><p class="lookup-error">JavaScript is required to open a property by ZPID.</p></noscript>
+  </main>
+</body>
+</html>
